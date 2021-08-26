@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Vehiculos</title>
+
+<!-- Bootstrap CSS -->
+<link href="../static/css/bootstrap.css" rel="stylesheet"
+	th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+	<div class="container">
+		<br>
+		<div>
+			<a th:href="@{/save/0}" class="btn btn-primary">Agregar</a>
+		</div>
+		
+		<div>
+			<a th:href="@{/}" class="btn btn-primary">Volver Index</a>
+		</div>
+
+		<h2 th:if="${#lists.isEmpty(list)}">No hay vehiculos</h2>
+		<div th:if="${not #lists.isEmpty(list)}">
+			<h2>Vehiculos</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Marca</th>
+						<th>Modelo</th>
+						<th>Anio</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="vehiculo : ${list}">
+						<td th:text="${vehiculo.marca}">
+						<td th:text="${vehiculo.modelo}">
+						<td th:text="${vehiculo.anio}">
+						<td><a class="btn btn-info" th:href="@{/save/{id}(id=${vehiculo.id})}">Editar</a></td>
+						<td><a class="btn btn-danger" th:href="@{/delete/{id}(id=${vehiculo.id})}">Eliminar</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
