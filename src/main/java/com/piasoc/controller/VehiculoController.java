@@ -22,6 +22,11 @@ public class VehiculoController {
 	public String index(Model model) {
 		return "index";
 	}
+	
+	@RequestMapping("/cotizacion")
+	public String cotizacion(Model model) {
+		return "cotizacion";
+	}
 
 	@RequestMapping("/abmVehiculo")
 	public String abmVehiculo(Model model) {

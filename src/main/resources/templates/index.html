@@ -1,20 +1,178 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<title>Personas</title>
 
-<!-- Bootstrap CSS -->
-<link href="../static/css/bootstrap.css" rel="stylesheet"
-	th:href="@{/css/bootstrap.css}">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="./css/index.css" />
+	<!-- Bootstrap CSS -->
+	<link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}">
+	<script src="https://kit.fontawesome.com/fc93a7f461.js" crossorigin="anonymous"></script>
+	<title>Document</title>
 </head>
-<body>
-	<div class="container">
-		<h2>INDEX</h2>
+
+<body class="paletaDeColores">
+	<section id="home" class="home">
+
+		<header>
+
+			<div class="logo-header">
+				<img src="./imgs/prueba3.png" alt="" id="img-logo" />
+			</div>
+
+			<nav>
+				<ul class="menu-container">
+					<li class="menu-item">
+						<a href="">Home</a>
+					</li>
+					<!-- Seguros menú, position relaive (hover). Seguros sub-menu, position absolute -->
+					<li class="menu-item seguros-menu">
+						<a href="" class="item-seguros">Seguros <i class="fas fa-chevron-down"></i></a>
+						<ul class="seguros-submenu">
+							<li><a href="">Empresas</a></li>
+							<li><a href="">Personas</a></li>
+						</ul>
+					</li>
+					<li class="menu-item">
+						<a href="">Siniestros</a>
+					</li>
+					<li class="menu-item">
+						<a href="">Cotización <i class="fas fa-chevron-down"></i></a>
+					</li>
+					<li class="menu-item">
+						<a href="">Contacto</a>
+					</li>
+				</ul>
+
+				<div>
+					<i class="fab fa-whatsapp"></i>
+				</div>
+			</nav>
+		</header>
+
+		<section id="slider" class="slider">
+
+			<div class="slider-container" id="slider-container">
+				<div class="slider-section">
+					<img src="./imgs/img-1.png" alt="" class="slider-img">
+				</div>
+				<div class="slider-section">
+					<img src="./imgs/img-2.png" alt="" class="slider-img">
+				</div>
+				<div class="slider-section">
+					<img src="./imgs/img-3.png" alt="" class="slider-img">
+				</div>
+			</div>
+
+			<div class="slider-btn slider-btn-right" id="slider-btn-right">&#62</div>
+
+			<div class="slider-btn slider-btn-left" id="slider-btn-left">&#60</div>
+
+			<div class="container-slider-logo">
+				<img src="./imgs/logo_blanco-2.png" alt="" class="slider-logo">
+			</div>
+		</section>
+
+		<section id="cotizacion" class="cotizacion">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<h2> Cotizá el seguro de tu vehiculo </h2>
+					</div>
+					<div class="col">
+						<a th:href="@{/cotizacion}" class="btn btn-primary">Cotiza</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="quienes-somos" class="quienes-somos">
+			<h2>Quiénes somos</h2>
+
+			<div class="info-quienes-somos">
+				<div class="img-quienes-somos">
+					<img src="./imgs/prueba.png" alt="">
+				</div>
+
+				<p>Somos una empresa de productores de seguros 
+					que se inició de forma independiente en el año 1980.
+					Desde entonces, nos enfocamos en ofrecer 
+					el mejor servicio a nuestros clientes.
+				</p>
+			</div>
+		</section>
+
+		<section id="seguros" class="seguros"></section>
+
+		<section id="companias" class="companias">
+			<h2>Compañías</h2>
+
+			<div class="companias-container">
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/allianz-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/berkley-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/experta-art-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/fianzas-y-creditos-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/galeno-art-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/integrity-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/prevencion-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/provincia-art-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/pseguros-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/sancor-seguros-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/seguros-rivadavia-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/tpc-seguros-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/hdi-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/atm-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/smg-seguros-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/zurich-logo.png" alt="">
+				</div>
+			</div>
+		</section>
+
+		<section id="contacto" class="contacto"></section>
 		
-		<div>
-			<a th:href="@{/abmVehiculo}" class="btn btn-primary">ABM Vehiculo</a>
-		</div>
-	</div>
+		<section id="ABM" class="ABM">
+			<h2>ABM</h2>
+				<div>
+					<a th:href="@{/abmVehiculo}" class="btn btn-primary">ABM Vehiculo</a>
+				</div>
+		</section>
+		
+		<footer></footer>
+	</section>
+	
+	<script src="./js/index.js"></script>
 </body>
+
 </html>
