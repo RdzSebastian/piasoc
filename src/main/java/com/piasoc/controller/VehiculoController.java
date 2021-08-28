@@ -25,6 +25,7 @@ public class VehiculoController {
 	
 	@RequestMapping("/cotizacion")
 	public String cotizacion(Model model) {
+		model.addAttribute("list", vehiculoService.getAll());
 		return "cotizacion";
 	}
 

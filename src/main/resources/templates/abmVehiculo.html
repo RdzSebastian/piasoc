@@ -27,16 +27,14 @@
 					<tr>
 						<th>Marca</th>
 						<th>Modelo</th>
-						<th>Anio</th>
-						<th></th>
-						<th></th>
+						<th>Tipo</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr th:each="vehiculo : ${list}">
 						<td th:text="${vehiculo.marca}">
 						<td th:text="${vehiculo.modelo}">
-						<td th:text="${vehiculo.anio}">
+						<td th:text="${vehiculo.tipo}">
 						<td><a class="btn btn-info" th:href="@{/save/{id}(id=${vehiculo.id})}">Editar</a></td>
 						<td><a class="btn btn-danger" th:href="@{/delete/{id}(id=${vehiculo.id})}">Eliminar</a></td>
 					</tr>

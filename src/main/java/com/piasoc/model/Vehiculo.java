@@ -18,10 +18,10 @@ public class Vehiculo {
 	
 	@Column
 	private String modelo;
-	
-	@Column
-	private int anio;
 
+	@Column
+	private String tipo;
+	
 	public Long getId() {
 		return id;
 	}
@@ -46,11 +46,12 @@ public class Vehiculo {
 		this.modelo = modelo;
 	}
 
-	public int getAnio() {
-		return anio;
+	public String getTipo() {
+		return tipo;
 	}
 
-	public void setAnio(int anio) {
-		this.anio = anio;
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
+
 }
