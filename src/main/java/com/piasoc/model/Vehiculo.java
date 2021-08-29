@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Vehiculo {
@@ -19,7 +22,8 @@ public class Vehiculo {
 	@Column
 	private String marca;
 	
-	@Column
+    @ManyToOne
+    @JoinColumn(name = "modelo_id")
 	private Modelo modelo;
 
 	public Long getId() {

@@ -46,10 +46,13 @@ public class VehiculoController {
 	
 
 		List<String> marcas = vehiculos.stream().map(Vehiculo::getMarca).collect(Collectors.toList());
-		model.addAttribute("marcas", marcas);
+		Set<String> setMarcas = new HashSet<String>(marcas);
+		model.addAttribute("marcas", setMarcas);
 		
 		List<Modelo> modelo = vehiculos.stream().map(Vehiculo::getModelo).collect(Collectors.toList());
-		model.addAttribute("modelos", modelo);
+		List<String> modelos = modelo.stream().map(Modelo::getNombre).collect(Collectors.toList());
+
+		model.addAttribute("modelos", modelos);
 		
 		List<Integer> anio = new ArrayList<Integer>();
 		anio.add(2021);
