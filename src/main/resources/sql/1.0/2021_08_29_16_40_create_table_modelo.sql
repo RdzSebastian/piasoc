@@ -1,4 +1,4 @@
-CREATE table Modelo
+CREATE table MODELO
 (
     id serial NOT null PRIMARY KEY,
     nombre character varying(20),
