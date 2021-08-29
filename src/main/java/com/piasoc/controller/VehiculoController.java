@@ -1,5 +1,8 @@
 package com.piasoc.controller;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.piasoc.model.Vehiculo;
 import com.piasoc.service.VehiculoService;
+
 
 @Controller
 public class VehiculoController {
@@ -25,7 +29,10 @@ public class VehiculoController {
 	
 	@RequestMapping("/cotizacion")
 	public String cotizacion(Model model) {
-		model.addAttribute("list", vehiculoService.getAll());
+	
+		List<Vehiculo> vehiculos = vehiculoService.getAll();
+		List marcas = vehiculos.stream().map(Vehiculo::getMarca).collect(Collectors.toList());
+		model.addAttribute("marcas", marcas);
 		return "cotizacion";
 	}
 

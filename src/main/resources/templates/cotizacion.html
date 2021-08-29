@@ -23,6 +23,14 @@
 				<div class="container">
 					<div class="row">
 						<div class="col">
+							<tr th:each="marca : ${marcas}">
+								<td th:text="${marca}">
+							</tr>
+						</div>
+						<div class="col">
+						
+
+						
 							<select class="form-select" aria-label="Default select example">
 								<option selected>Tipo de vehiculo</option>
 								<option value="1">Auto</option>
