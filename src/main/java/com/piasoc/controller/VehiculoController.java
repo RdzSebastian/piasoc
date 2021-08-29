@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.piasoc.model.Modelo;
 import com.piasoc.model.Vehiculo;
+import com.piasoc.service.ModeloService;
 import com.piasoc.service.VehiculoService;
 
 
@@ -24,6 +26,9 @@ public class VehiculoController {
 
 	@Autowired
 	private VehiculoService vehiculoService;
+
+	@Autowired
+	private ModeloService modeloService;
 	
 	@RequestMapping("/")
 	public String index(Model model) {
@@ -43,7 +48,7 @@ public class VehiculoController {
 		List<String> marcas = vehiculos.stream().map(Vehiculo::getMarca).collect(Collectors.toList());
 		model.addAttribute("marcas", marcas);
 		
-		List<String> modelo = vehiculos.stream().map(Vehiculo::getModelo).collect(Collectors.toList());
+		List<Modelo> modelo = vehiculos.stream().map(Vehiculo::getModelo).collect(Collectors.toList());
 		model.addAttribute("modelos", modelo);
 		
 		List<Integer> anio = new ArrayList<Integer>();
@@ -56,7 +61,7 @@ public class VehiculoController {
 
 	@RequestMapping("/abmVehiculo")
 	public String abmVehiculo(Model model) {
-		model.addAttribute("list", vehiculoService.getAll());
+		model.addAttribute("listaVehiculo", vehiculoService.getAll());
 		return "abmVehiculo";
 	}
 

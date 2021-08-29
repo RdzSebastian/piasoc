@@ -14,20 +14,28 @@ public class Vehiculo {
 	private Long id;
 	
 	@Column
+	private String tipo;
+	
+	@Column
 	private String marca;
 	
 	@Column
-	private String modelo;
+	private Modelo modelo;
 
-	@Column
-	private String tipo;
-	
 	public Long getId() {
 		return id;
 	}
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 	public String getMarca() {
@@ -38,20 +46,12 @@ public class Vehiculo {
 		this.marca = marca;
 	}
 
-	public String getModelo() {
+	public Modelo getModelo() {
 		return modelo;
 	}
 
-	public void setModelo(String modelo) {
+	public void setModelo(Modelo modelo) {
 		this.modelo = modelo;
-	}
-
-	public String getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
 	}
 
 }

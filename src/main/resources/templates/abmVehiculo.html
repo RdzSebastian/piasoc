@@ -19,8 +19,8 @@
 			<a th:href="@{/}" class="btn btn-primary">Volver Index</a>
 		</div>
 
-		<h2 th:if="${#lists.isEmpty(list)}">No hay vehiculos</h2>
-		<div th:if="${not #lists.isEmpty(list)}">
+		<h2 th:if="${#lists.isEmpty(listaVehiculo)}">No hay vehiculos</h2>
+		<div th:if="${not #lists.isEmpty(listaVehiculo)}">
 			<h2>Vehiculos</h2>
 			<table class="table">
 				<thead>
@@ -28,15 +28,19 @@
 						<th>Marca</th>
 						<th>Modelo</th>
 						<th>Tipo</th>
-						<th></th>
-						<th></th>
+						<th>Anio Desde</th>
+						<th>Anio Hasta</th>
+						<th>Editar</th>
+						<th>Eliminar</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="vehiculo : ${list}">
-						<td th:text="${vehiculo.marca}">
-						<td th:text="${vehiculo.modelo}">
+					<tr th:each="vehiculo : ${listaVehiculo}">
 						<td th:text="${vehiculo.tipo}">
+						<td th:text="${vehiculo.marca}">
+						<td th:text="${vehiculo.modelo.nombre}">
+						<td th:text="${vehiculo.modelo.anio_desde}">
+						<td th:text="${vehiculo.modelo.anio_hasta}">
 						<td><a class="btn btn-info" th:href="@{/save/{id}(id=${vehiculo.id})}">Editar</a></td>
 						<td><a class="btn btn-danger" th:href="@{/delete/{id}(id=${vehiculo.id})}">Eliminar</a></td>
 					</tr>
