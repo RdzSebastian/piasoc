@@ -1,6 +1,9 @@
 package com.piasoc.controller;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,10 +32,25 @@ public class VehiculoController {
 	
 	@RequestMapping("/cotizacion")
 	public String cotizacion(Model model) {
-	
+		
 		List<Vehiculo> vehiculos = vehiculoService.getAll();
-		List marcas = vehiculos.stream().map(Vehiculo::getMarca).collect(Collectors.toList());
+		
+		List<String> tipos = vehiculos.stream().map(Vehiculo::getTipo).collect(Collectors.toList());
+		Set<String> setTipos = new HashSet<String>(tipos);
+		model.addAttribute("tipos", setTipos);
+	
+
+		List<String> marcas = vehiculos.stream().map(Vehiculo::getMarca).collect(Collectors.toList());
 		model.addAttribute("marcas", marcas);
+		
+		List<String> modelo = vehiculos.stream().map(Vehiculo::getModelo).collect(Collectors.toList());
+		model.addAttribute("modelos", modelo);
+		
+		List<Integer> anio = new ArrayList<Integer>();
+		anio.add(2021);
+		anio.add(2020);
+		anio.add(2019);
+		model.addAttribute("anios", anio);
 		return "cotizacion";
 	}
 
