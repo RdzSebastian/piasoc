@@ -17,10 +17,10 @@ public class Modelo {
 	private String nombre;
 	
 	@Column
-	private String anio_desde;
+	private int anio_desde;
 
 	@Column
-	private String anio_hasta;
+	private int anio_hasta;
 
 	public Long getId() {
 		return id;
@@ -38,19 +38,19 @@ public class Modelo {
 		this.nombre = nombre;
 	}
 
-	public String getAnio_desde() {
+	public int getAnio_desde() {
 		return anio_desde;
 	}
 
-	public void setAnio_desde(String anio_desde) {
+	public void setAnio_desde(int anio_desde) {
 		this.anio_desde = anio_desde;
 	}
 
-	public String getAnio_hasta() {
+	public int getAnio_hasta() {
 		return anio_hasta;
 	}
 
-	public void setAnio_hasta(String anio_hasta) {
+	public void setAnio_hasta(int anio_hasta) {
 		this.anio_hasta = anio_hasta;
 	}
 

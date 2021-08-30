@@ -82,15 +82,19 @@ public class VehiculoController {
 	
 	@PostMapping("/save")
 	public String save(Vehiculo vehiculo, Modelo modelo, Model model) {
-		modeloService.save(modelo);
-		modeloService.get(modelo.getId());
+		Modelo modeloGuardado = modeloService.save(modelo);
+		vehiculo.setModelo(modeloGuardado);
 		vehiculoService.save(vehiculo);
 		return "redirect:/abmVehiculo";
 	}
 
 	@GetMapping("/delete/{id}")
 	public String delete(@PathVariable("id") Long id, Model model) {
+		Vehiculo vehiculo = vehiculoService.get(id);
 		vehiculoService.delete(id);
+		modeloService.delete(vehiculo.getModelo().getId());
+
+		
 		return "redirect:/abmVehiculo";
 	}
 
