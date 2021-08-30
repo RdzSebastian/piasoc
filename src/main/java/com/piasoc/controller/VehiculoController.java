@@ -79,8 +79,9 @@ public class VehiculoController {
 	}
 	
 	@PostMapping("/save")
-	public String save(Vehiculo vehiculo, Model model) {
+	public String save(Vehiculo vehiculo, Modelo modelo, Model model) {
 		vehiculoService.save(vehiculo);
+		modeloService.save(modelo);
 		return "redirect:/abmVehiculo";
 	}
 

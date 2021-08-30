@@ -12,21 +12,34 @@
 	<div class="container">
 		<br>
 		<h2>Agregar Vehiculo</h2>
-		<form action="#" th:action="@{/save}" th:object="${vehiculo}"
-			method="post">
-			<div class="form-group">
-				<label for="marca">Marca</label> <input type="text"
-					class="form-control" id="marca" th:field="*{marca}" name="marca">
+		<form action="#" th:action="@{/save}" method="post">
+
+			<div th:object="${vehiculo}" class="form-details">
+				<input type="hidden" th:field="*{id}" name="id" id="id">
+				<div class="form-group">
+					<label for="tipo">Tipo</label> 
+					<input type="text" class="form-control" id="tipo" th:field="*{tipo}" name="tipo">
+				</div>
+				<div class="form-group">
+					<label for="marca">Marca</label> <input type="text"
+						class="form-control" id="marca" th:field="*{marca}" name="marca">
+				</div>
 			</div>
-			<input type="hidden" th:field="*{id}" name="id" id="id">
-			<div class="form-group">
-				<label for="apellido">Modelo</label> <input type="text"
-					class="form-control" id="modelo" th:field="*{modelo}" name="modelo">
-			</div>
-			<div class="form-group">
-				<label for="tipo">Tipo</label> <input type="text"
-					class="form-control" id="tipo" th:field="*{tipo}" name="tipo">
-			</div>
+			<div th:object="${modelo}" class="form-details">
+				<input type="hidden" th:field="*{id}" name="id" id="id">
+				<div class="form-group">
+					<label for="modelo">Modelo</label> 
+					<input type="text" class="form-control" id="modelo" th:field="*{modelo}" name="modelo">
+				</div>
+				<div class="form-group">
+					<label for="anio_desde">Año Desde</label> 
+					<input type="text" class="form-control" id="anio_desde" th:field="*{anio_desde}" name="anio_desde">
+				</div>
+				<div class="form-group">
+					<label for="anio_hasta">Año Hasta</label> 
+					<input type="text" bclass="form-control" id="anio_hasta" th:field="*{anio_hasta}" name="anio_hasta">
+				</div>
+		    </div>
 			<button type="submit" class="btn btn-success">Guardar</button>
 		</form>
 	</div>
