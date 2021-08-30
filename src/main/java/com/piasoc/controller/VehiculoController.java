@@ -72,16 +72,19 @@ public class VehiculoController {
 	public String showSave(@PathVariable("id") Long id, Model model) {
 		if(id != null && id != 0) {
 			model.addAttribute("vehiculo", vehiculoService.get(id));
+			model.addAttribute("modelo", modeloService.get(id));
 		}else {
 			model.addAttribute("vehiculo", new Vehiculo());
+			model.addAttribute("modelo", new Modelo());
 		}
 		return "save";
 	}
 	
 	@PostMapping("/save")
 	public String save(Vehiculo vehiculo, Modelo modelo, Model model) {
-		vehiculoService.save(vehiculo);
 		modeloService.save(modelo);
+		modeloService.get(modelo.getId());
+		vehiculoService.save(vehiculo);
 		return "redirect:/abmVehiculo";
 	}
 
