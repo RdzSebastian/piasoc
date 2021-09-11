@@ -19,8 +19,8 @@ public class Modelo {
 	@Column
 	private int anio_desde;
 
-	@Column
-	private int anio_hasta;
+	@Column(nullable=true, name="anio_hasta")
+	private Integer anio_hasta;
 
 	public Long getId() {
 		return id;

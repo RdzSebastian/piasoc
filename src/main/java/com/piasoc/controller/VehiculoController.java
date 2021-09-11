@@ -43,7 +43,6 @@ public class VehiculoController {
 		List<String> tipos = vehiculos.stream().map(Vehiculo::getTipo).collect(Collectors.toList());
 		Set<String> setTipos = new HashSet<String>(tipos);
 		model.addAttribute("tipos", setTipos);
-	
 
 		List<String> marcas = vehiculos.stream().map(Vehiculo::getMarca).collect(Collectors.toList());
 		Set<String> setMarcas = new HashSet<String>(marcas);
@@ -64,6 +63,12 @@ public class VehiculoController {
 
 	@RequestMapping("/abmVehiculo")
 	public String abmVehiculo(Model model) {
+		List<Vehiculo> vehiculos = vehiculoService.getAll();
+		for (Vehiculo vehiculo : vehiculos) {
+		    if(vehiculo.getModelo() == null) {
+		    	vehiculo.getModelo().setAnio_hasta(2021);
+		    }
+		}
 		model.addAttribute("listaVehiculo", vehiculoService.getAll());
 		return "abmVehiculo";
 	}
