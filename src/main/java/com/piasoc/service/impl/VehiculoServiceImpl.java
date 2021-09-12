@@ -1,5 +1,7 @@
 package com.piasoc.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
@@ -19,5 +21,8 @@ public class VehiculoServiceImpl extends GenericServiceImpl<Vehiculo, Long> impl
 	public CrudRepository<Vehiculo, Long> getDao() {
 		return vehiculoDao;
 	}
-
+	
+	public List<Vehiculo> findByTipo(String tipo) {
+		return vehiculoDao.findByTipo(tipo);
+	}
 }

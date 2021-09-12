@@ -44,9 +44,13 @@ public class VehiculoController {
 		Set<String> setTipos = new HashSet<String>(tipos);
 		model.addAttribute("tipos", setTipos);
 
-		List<String> marcas = vehiculos.stream().map(Vehiculo::getMarca).collect(Collectors.toList());
+		/*List<String> marcas = vehiculos.stream().map(Vehiculo::getMarca).collect(Collectors.toList());
 		Set<String> setMarcas = new HashSet<String>(marcas);
-		model.addAttribute("marcas", setMarcas);
+		model.addAttribute("marcas", setMarcas);*/
+		
+		//Se setea luego de elegir el tipo de vehiculo
+		List<String> marcas = new ArrayList<String>();
+		model.addAttribute("marcas", marcas);
 		
 		List<Modelo> modelo = vehiculos.stream().map(Vehiculo::getModelo).collect(Collectors.toList());
 		List<String> modelos = modelo.stream().map(Modelo::getNombre).collect(Collectors.toList());
@@ -58,6 +62,10 @@ public class VehiculoController {
 		anio.add(2020);
 		anio.add(2019);
 		model.addAttribute("anios", anio);
+		
+		//Para poder usar los metodos del service dentro del thymeleaf de cotizacion
+        model.addAttribute("vehiculoService", this);
+
 		return "cotizacion";
 	}
 
@@ -102,6 +110,17 @@ public class VehiculoController {
 		
 		return "redirect:/abmVehiculo";
 	}
+	
+	// TODO Dudo mucho que esto se haga asi, estoy tratando de hacer una call
+	// a aca para devolver valores al template, pero no estaria funcando
+	public void getMarcas(Model model, String tipo) {
+		List<Vehiculo> marcas = vehiculoService.findByTipo(tipo);
+		model.addAttribute("marcas", marcas);
+	}
+	
+	
+	
+
 
 }
 
