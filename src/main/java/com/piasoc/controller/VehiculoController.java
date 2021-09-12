@@ -65,7 +65,7 @@ public class VehiculoController {
 	public String abmVehiculo(Model model) {
 		List<Vehiculo> vehiculos = vehiculoService.getAll();
 		for (Vehiculo vehiculo : vehiculos) {
-			if(vehiculo.getModelo().equals(null)) {
+			if(vehiculo.getModelo().getAnio_hasta() == null) {
 		    	vehiculo.getModelo().setAnio_hasta(2021);
 		    }
 		}

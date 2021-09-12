@@ -46,7 +46,7 @@ public class Modelo {
 		this.anio_desde = anio_desde;
 	}
 
-	public int getAnio_hasta() {
+	public Integer getAnio_hasta() {
 		return anio_hasta;
 	}
 
