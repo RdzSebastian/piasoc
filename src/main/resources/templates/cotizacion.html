@@ -23,13 +23,17 @@
 				<div class="container">
 					<div class="row">
 						<div class="col">
-							<select class="form-select" th:onchange="'alert(\'' + 'Hola' + '\');'">
+						  <form th:action=@{/getMarcas} method="post">
+							<select class="form-select" id="tipo" name="tipo">
+								<!--th:onchange="@{/getMarcas}" -->
 								<!-- th:onchange="'alert(\'' + ${tipo}+ '\');'"> -->
 								<!-- ${vehiculoService.getMarcas(${tipo})}"> -->
 								<!--document.getElementById('tipo_vehiculo');-->
 								<option selected hidden>Tipo de vehiculo</option>
-								<option id="tipo_vehiculo" th:each="tipo : ${tipos}" th:text="${tipo}"/>
+								<option th:each="tipo : ${tipos}" th:value="${tipo}" th:text="${tipo}"/>
 							</select>
+							<button type="submit">Not in time</button>
+							 </form>
 						</div>
 						<div class="col">
 							<select class="form-select">

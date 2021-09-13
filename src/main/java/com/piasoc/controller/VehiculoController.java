@@ -6,13 +6,18 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.piasoc.model.Modelo;
 import com.piasoc.model.Vehiculo;
@@ -113,9 +118,15 @@ public class VehiculoController {
 	
 	// TODO Dudo mucho que esto se haga asi, estoy tratando de hacer una call
 	// a aca para devolver valores al template, pero no estaria funcando
-	public void getMarcas(Model model, String tipo) {
-		List<Vehiculo> marcas = vehiculoService.findByTipo(tipo);
-		model.addAttribute("marcas", marcas);
+	@RequestMapping(value="/getMarcas", method = RequestMethod.POST)
+	public String getMarcas(Model model, HttpSession session,HttpServletRequest request) {
+        String tipo= request.getParameter("tipo");
+        List<Vehiculo> vehiculos = vehiculoService.findByTipo(tipo);
+		List<String> marcas = vehiculos.stream().map(Vehiculo::getMarca).collect(Collectors.toList());
+		Set<String> setMarcas = new HashSet<String>(marcas);
+		model.addAttribute("tipos", tipo);
+		model.addAttribute("marcas", setMarcas);
+		return "cotizacion";
 	}
 	
 	
