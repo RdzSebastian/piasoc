@@ -1,10 +1,7 @@
 package com.piasoc.controller;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -12,7 +9,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,17 +16,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.piasoc.model.Modelo;
-import com.piasoc.model.Vehiculo;
+import com.piasoc.model.TipoVehiculo;
 import com.piasoc.service.ModeloService;
-import com.piasoc.service.VehiculoService;
+import com.piasoc.service.TipoVehiculoService;
 
 
 @Controller
-public class VehiculoController {
-
+public class TipoVehiculoController {
+/*
 
 	@Autowired
-	private VehiculoService vehiculoService;
+	private TipoVehiculoService vehiculoService;
 
 	@Autowired
 	private ModeloService modeloService;
@@ -43,24 +39,24 @@ public class VehiculoController {
 	@RequestMapping("/cotizacion")
 	public String cotizacion(Model model) {
 		
-		List<Vehiculo> vehiculos = vehiculoService.getAll();
+		List<TipoVehiculo> vehiculos = vehiculoService.getAll();
 		
-		List<String> tipos = vehiculos.stream().map(Vehiculo::getTipo).collect(Collectors.toList());
-		Set<String> setTipos = new HashSet<String>(tipos);
-		model.addAttribute("tipos", setTipos);
+		//List<String> tipos = vehiculos.stream().map(TipoVehiculo::getTipo).collect(Collectors.toList());
+		//Set<String> setTipos = new HashSet<String>(tipos);
+		//model.addAttribute("tipos", setTipos);
 
 		/*List<String> marcas = vehiculos.stream().map(Vehiculo::getMarca).collect(Collectors.toList());
 		Set<String> setMarcas = new HashSet<String>(marcas);
-		model.addAttribute("marcas", setMarcas);*/
+		model.addAttribute("marcas", setMarcas);
 		
 		//Se setea luego de elegir el tipo de vehiculo
 		List<String> marcas = new ArrayList<String>();
 		model.addAttribute("marcas", marcas);
 		
-		List<Modelo> modelo = vehiculos.stream().map(Vehiculo::getModelo).collect(Collectors.toList());
-		List<String> modelos = modelo.stream().map(Modelo::getNombre).collect(Collectors.toList());
+		//List<Modelo> modelo = vehiculos.stream().map(TipoVehiculo::getModelo).collect(Collectors.toList());
+		//List<String> modelos = modelo.stream().map(Modelo::getNombre).collect(Collectors.toList());
 
-		model.addAttribute("modelos", modelos);
+		//model.addAttribute("modelos", modelos);
 		
 		List<Integer> anio = new ArrayList<Integer>();
 		anio.add(2021);
@@ -76,11 +72,11 @@ public class VehiculoController {
 
 	@RequestMapping("/abmVehiculo")
 	public String abmVehiculo(Model model) {
-		List<Vehiculo> vehiculos = vehiculoService.getAll();
-		for (Vehiculo vehiculo : vehiculos) {
-			if(vehiculo.getModelo().getAnio_hasta() == null) {
-		    	vehiculo.getModelo().setAnio_hasta(2021);
-		    }
+		List<TipoVehiculo> vehiculos = vehiculoService.getAll();
+		for (TipoVehiculo vehiculo : vehiculos) {
+			//if(vehiculo.getModelo().getAnio_hasta() == null) {
+		    //	vehiculo.getModelo().setAnio_hasta(2021);
+		    //}
 		}
 		model.addAttribute("listaVehiculo", vehiculoService.getAll());
 		return "abmVehiculo";
@@ -92,25 +88,25 @@ public class VehiculoController {
 			model.addAttribute("vehiculo", vehiculoService.get(id));
 			model.addAttribute("modelo", modeloService.get(id));
 		}else {
-			model.addAttribute("vehiculo", new Vehiculo());
+			model.addAttribute("vehiculo", new TipoVehiculo());
 			model.addAttribute("modelo", new Modelo());
 		}
 		return "save";
 	}
 	
 	@PostMapping("/save")
-	public String save(Vehiculo vehiculo, Modelo modelo, Model model) {
+	public String save(TipoVehiculo vehiculo, Modelo modelo, Model model) {
 		Modelo modeloGuardado = modeloService.save(modelo);
-		vehiculo.setModelo(modeloGuardado);
+		//vehiculo.setModelo(modeloGuardado);
 		vehiculoService.save(vehiculo);
 		return "redirect:/abmVehiculo";
 	}
 
 	@GetMapping("/delete/{id}")
 	public String delete(@PathVariable("id") Long id, Model model) {
-		Vehiculo vehiculo = vehiculoService.get(id);
+		TipoVehiculo vehiculo = vehiculoService.get(id);
 		vehiculoService.delete(id);
-		modeloService.delete(vehiculo.getModelo().getId());
+		//modeloService.delete(vehiculo.getModelo().getId());
 
 		
 		return "redirect:/abmVehiculo";
@@ -121,16 +117,16 @@ public class VehiculoController {
 	@RequestMapping(value="/getMarcas", method = RequestMethod.POST)
 	public String getMarcas(Model model, HttpSession session,HttpServletRequest request) {
         String tipo= request.getParameter("tipo");
-        List<Vehiculo> vehiculos = vehiculoService.findByTipo(tipo);
-		List<String> marcas = vehiculos.stream().map(Vehiculo::getMarca).collect(Collectors.toList());
-		Set<String> setMarcas = new HashSet<String>(marcas);
+        //List<TipoVehiculo> vehiculos = vehiculoService.findByTipo(tipo);
+		//List<String> marcas = vehiculos.stream().map(TipoVehiculo::getMarca).collect(Collectors.toList());
+		//Set<String> setMarcas = new HashSet<String>(marcas);
 		model.addAttribute("tipos", tipo);
-		model.addAttribute("marcas", setMarcas);
+		//model.addAttribute("marcas", setMarcas);
 		return "cotizacion";
 	}
 	
 	
-	
+	*/
 
 
 }
