@@ -19,28 +19,28 @@ public class TipoVehiculoController {
 
 	@RequestMapping("/abmTipoVehiculo")
 	public String abmTipoVehiculo(Model model) {
-		model.addAttribute("list", tipoVehiculoService.getAll());
+		model.addAttribute("listaTipoVehiculo", tipoVehiculoService.getAll());
 		return "abmTipoVehiculo";
 	}
 
 	@GetMapping("/saveTipoVehiculo/{id}")
-	public String showSave(@PathVariable("id") Long id, Model model) {
+	public String showSaveTipoVehiculo(@PathVariable("id") Long id, Model model) {
 		if(id != null && id != 0) {
-			model.addAttribute("vehiculo", tipoVehiculoService.get(id));
+			model.addAttribute("tipoVehiculo", tipoVehiculoService.get(id));
 		}else {
-			model.addAttribute("vehiculo", new TipoVehiculo());
+			model.addAttribute("tipoVehiculo", new TipoVehiculo());
 		}
 		return "saveTipoVehiculo";
 	}
 
-	@PostMapping("/save")
-	public String save(TipoVehiculo vehiculo, Model model) {
+	@PostMapping("/saveTipoVehiculo")
+	public String saveTipoVehiculo(TipoVehiculo vehiculo, Model model) {
 		tipoVehiculoService.save(vehiculo);
 		return "redirect:/abmTipoVehiculo";
 	}
 
-	@GetMapping("/delete/{id}")
-	public String delete(@PathVariable("id") Long id, Model model) {
+	@GetMapping("/deleteTipoVehiculo/{id}")
+	public String deleteTipoVehiculo(@PathVariable("id") Long id, Model model) {
 		tipoVehiculoService.delete(id);
 		return "redirect:/abmTipoVehiculo";
 	}

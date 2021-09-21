@@ -19,12 +19,12 @@ public class ModeloController {
 
 	@RequestMapping("/abmModelo")
 	public String abmModelo(Model model) {
-		model.addAttribute("list", modeloService.getAll());
+		model.addAttribute("listaModelo", modeloService.getAll());
 		return "abmModelo";
 	}
 
 	@GetMapping("/saveModelo/{id}")
-	public String showSave(@PathVariable("id") Long id, Model model) {
+	public String showSaveModelo(@PathVariable("id") Long id, Model model) {
 		if(id != null && id != 0) {
 			model.addAttribute("modelo", modeloService.get(id));
 		}else {
@@ -33,14 +33,14 @@ public class ModeloController {
 		return "saveModelo";
 	}
 
-	@PostMapping("/save")
-	public String save(Modelo modelo, Model model) {
+	@PostMapping("/saveModelo")
+	public String saveModelo(Modelo modelo, Model model) {
 		modeloService.save(modelo);
 		return "redirect:/abmModelo";
 	}
 
-	@GetMapping("/delete/{id}")
-	public String delete(@PathVariable("id") Long id, Model model) {
+	@GetMapping("/deleteModelo/{id}")
+	public String deleteModelo(@PathVariable("id") Long id, Model model) {
 		modeloService.delete(id);
 		return "redirect:/abmModelo";
 	}

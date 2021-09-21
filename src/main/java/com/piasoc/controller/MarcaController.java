@@ -19,12 +19,12 @@ public class MarcaController {
 	
 	@RequestMapping("/abmMarca")
 	public String abmMarca(Model model) {
-		model.addAttribute("list", marcaService.getAll());
+		model.addAttribute("listaMarca", marcaService.getAll());
 		return "abmMarca";
 	}
 	
 	@GetMapping("/saveMarca/{id}")
-	public String showSave(@PathVariable("id") Long id, Model model) {
+	public String showSaveMarca(@PathVariable("id") Long id, Model model) {
 		if(id != null && id != 0) {
 			model.addAttribute("marca", marcaService.get(id));
 		}else {
@@ -33,14 +33,14 @@ public class MarcaController {
 		return "saveMarca";
 	}
 	
-	@PostMapping("/save")
-	public String save(Marca marca, Model model) {
+	@PostMapping("/saveMarca")
+	public String saveMarca(Marca marca, Model model) {
 		marcaService.save(marca);
 		return "redirect:/abmMarca";
 	}
 
-	@GetMapping("/delete/{id}")
-	public String delete(@PathVariable("id") Long id, Model model) {
+	@GetMapping("/deleteMarca/{id}")
+	public String deleteMarca(@PathVariable("id") Long id, Model model) {
 		marcaService.delete(id);
 		return "redirect:/abmMarca";
 	}

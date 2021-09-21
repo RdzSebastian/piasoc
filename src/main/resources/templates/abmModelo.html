@@ -12,22 +12,22 @@
 	<div class="container">
 		<br>
 		<div>
-			<a th:href="@{/save/0}" class="btn btn-primary">Agregar</a>
+			<a th:href="@{/saveModelo/0}" class="btn btn-primary">Agregar</a>
 		</div>
 		
 		<div>
 			<a th:href="@{/}" class="btn btn-primary">Volver Index</a>
 		</div>
 
-		<h2 th:if="${#lists.isEmpty(listaVehiculo)}">No hay vehiculos</h2>
-		<div th:if="${not #lists.isEmpty(listaVehiculo)}">
+		<h2 th:if="${#lists.isEmpty(listaModelo)}">No hay vehiculos</h2>
+		<div th:if="${not #lists.isEmpty(listaModelo)}">
 			<h2>Vehiculos</h2>
 			<table class="table">
 				<thead>
 					<tr>
+						<th>Tipo</th>
 						<th>Marca</th>
 						<th>Modelo</th>
-						<th>Tipo</th>
 						<th>Anio Desde</th>
 						<th>Anio Hasta</th>
 						<th>Editar</th>
@@ -35,14 +35,14 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="vehiculo : ${listaVehiculo}">
-						<td th:text="${vehiculo.tipo}">
-						<td th:text="${vehiculo.marca}">
-						<td th:text="${vehiculo.modelo.nombre}">
-						<td th:text="${vehiculo.modelo.anio_desde}">
-						<td th:text="${vehiculo.modelo.anio_hasta}">
-						<td><a class="btn btn-info" th:href="@{/save/{id}(id=${vehiculo.id})}">Editar</a></td>
-						<td><a class="btn btn-danger" th:href="@{/delete/{id}(id=${vehiculo.id})}">Eliminar</a></td>
+					<tr th:each="modelo : ${listaModelo}">
+						<td th:text="${modelo.tipoVehiculo.nombre}">
+						<td th:text="${modelo.marca.nombre}">
+						<td th:text="${modelo.nombre}">
+						<td th:text="${modelo.anio_desde}">
+						<td th:text="${modelo.anio_hasta}">
+						<td><a class="btn btn-info" th:href="@{/saveModelo/{id}(id=${modelo.id})}">Editar</a></td>
+						<td><a class="btn btn-danger" th:href="@{/deleteModelo/{id}(id=${modelo.id})}">Eliminar</a></td>
 					</tr>
 				</tbody>
 			</table>
