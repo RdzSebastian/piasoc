@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.piasoc.commons.GeneralPath;
 import com.piasoc.model.Modelo;
 import com.piasoc.service.ModeloService;
 
@@ -18,31 +19,31 @@ public class ModeloController {
 	private ModeloService modeloService;
 
 	@RequestMapping("/abmModelo")
-	public String abmModelo(Model model) {
+	public String abm(Model model) {
 		model.addAttribute("listaModelo", modeloService.getAll());
-		return "abmModelo";
+		return GeneralPath.MODELO + GeneralPath.PATH_SEPARATOR + "abmModelo";
 	}
 
 	@GetMapping("/saveModelo/{id}")
-	public String showSaveModelo(@PathVariable("id") Long id, Model model) {
+	public String showSave(@PathVariable("id") Long id, Model model) {
 		if(id != null && id != 0) {
 			model.addAttribute("modelo", modeloService.get(id));
 		}else {
 			model.addAttribute("modelo", new Modelo());
 		}
-		return "saveModelo";
+		return GeneralPath.MODELO + GeneralPath.PATH_SEPARATOR + "saveModelo";
 	}
 
 	@PostMapping("/saveModelo")
-	public String saveModelo(Modelo modelo, Model model) {
+	public String savE(Modelo modelo, Model model) {
 		modeloService.save(modelo);
-		return "redirect:/abmModelo";
+		return "redirect:/" + GeneralPath.MODELO + GeneralPath.PATH_SEPARATOR +  "abmModelo";
 	}
 
 	@GetMapping("/deleteModelo/{id}")
-	public String deleteModelo(@PathVariable("id") Long id, Model model) {
+	public String delete(@PathVariable("id") Long id, Model model) {
 		modeloService.delete(id);
-		return "redirect:/abmModelo";
+		return "redirect:/" + GeneralPath.MODELO + GeneralPath.PATH_SEPARATOR + "abmModelo";
 	}
 
 }

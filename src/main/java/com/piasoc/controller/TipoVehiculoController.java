@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.piasoc.commons.GeneralPath;
 import com.piasoc.model.TipoVehiculo;
 import com.piasoc.service.TipoVehiculoService;
 
@@ -18,31 +19,31 @@ public class TipoVehiculoController {
 	private TipoVehiculoService tipoVehiculoService;
 
 	@RequestMapping("/abmTipoVehiculo")
-	public String abmTipoVehiculo(Model model) {
+	public String abm(Model model) {
 		model.addAttribute("listaTipoVehiculo", tipoVehiculoService.getAll());
-		return "abmTipoVehiculo";
+		return GeneralPath.TIPO_VEHICULO + GeneralPath.PATH_SEPARATOR +  "abmTipoVehiculo";
 	}
 
 	@GetMapping("/saveTipoVehiculo/{id}")
-	public String showSaveTipoVehiculo(@PathVariable("id") Long id, Model model) {
+	public String showSave(@PathVariable("id") Long id, Model model) {
 		if(id != null && id != 0) {
 			model.addAttribute("tipoVehiculo", tipoVehiculoService.get(id));
 		}else {
 			model.addAttribute("tipoVehiculo", new TipoVehiculo());
 		}
-		return "saveTipoVehiculo";
+		return GeneralPath.TIPO_VEHICULO + GeneralPath.PATH_SEPARATOR + "saveTipoVehiculo";
 	}
 
 	@PostMapping("/saveTipoVehiculo")
-	public String saveTipoVehiculo(TipoVehiculo vehiculo, Model model) {
+	public String save(TipoVehiculo vehiculo, Model model) {
 		tipoVehiculoService.save(vehiculo);
-		return "redirect:/abmTipoVehiculo";
+		return "redirect:/" + GeneralPath.TIPO_VEHICULO + GeneralPath.PATH_SEPARATOR + "abmTipoVehiculo";
 	}
 
 	@GetMapping("/deleteTipoVehiculo/{id}")
-	public String deleteTipoVehiculo(@PathVariable("id") Long id, Model model) {
+	public String delete(@PathVariable("id") Long id, Model model) {
 		tipoVehiculoService.delete(id);
-		return "redirect:/abmTipoVehiculo";
+		return "redirect:/" + GeneralPath.TIPO_VEHICULO + GeneralPath.PATH_SEPARATOR + "abmTipoVehiculo";
 	}
 
 }

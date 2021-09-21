@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.piasoc.commons.GeneralPath;
 import com.piasoc.model.Marca;
 import com.piasoc.service.MarcaService;
 
@@ -18,30 +19,30 @@ public class MarcaController {
 	private MarcaService marcaService;
 	
 	@RequestMapping("/abmMarca")
-	public String abmMarca(Model model) {
+	public String abm(Model model) {
 		model.addAttribute("listaMarca", marcaService.getAll());
-		return "abmMarca";
+		return GeneralPath.MARCA + GeneralPath.PATH_SEPARATOR + "abmMarca";
 	}
 	
 	@GetMapping("/saveMarca/{id}")
-	public String showSaveMarca(@PathVariable("id") Long id, Model model) {
+	public String showSave(@PathVariable("id") Long id, Model model) {
 		if(id != null && id != 0) {
 			model.addAttribute("marca", marcaService.get(id));
 		}else {
 			model.addAttribute("marca", new Marca());
 		}
-		return "saveMarca";
+		return GeneralPath.MARCA + GeneralPath.PATH_SEPARATOR + "saveMarca";
 	}
 	
 	@PostMapping("/saveMarca")
-	public String saveMarca(Marca marca, Model model) {
+	public String save(Marca marca, Model model) {
 		marcaService.save(marca);
-		return "redirect:/abmMarca";
+		return "redirect:/" + GeneralPath.MARCA + GeneralPath.PATH_SEPARATOR +  "abmMarca";
 	}
 
 	@GetMapping("/deleteMarca/{id}")
-	public String deleteMarca(@PathVariable("id") Long id, Model model) {
+	public String delete(@PathVariable("id") Long id, Model model) {
 		marcaService.delete(id);
-		return "redirect:/abmMarca";
+		return "redirect:/" + GeneralPath.MARCA + GeneralPath.PATH_SEPARATOR +  "abmMarca";
 	}
 }
