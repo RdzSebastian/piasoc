@@ -1,5 +1,7 @@
 package com.piasoc.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.piasoc.commons.GeneralPath;
 import com.piasoc.model.Modelo;
+import com.piasoc.model.TipoVehiculo;
 import com.piasoc.service.ModeloService;
 
 @Controller
@@ -20,7 +23,13 @@ public class ModeloController {
 
 	@RequestMapping("/abmModelo")
 	public String abm(Model model) {
-		model.addAttribute("listaModelo", modeloService.getAll());
+		List<Modelo> modelos = modeloService.getAll();
+		for (Modelo modelo : modelos) {
+			if(modelo.getAnio_hasta() == null) {
+				modelo.setAnio_hasta(2021);
+		    }
+		}
+		model.addAttribute("listaModelo", modelos);
 		return GeneralPath.MODELO + GeneralPath.PATH_SEPARATOR + "abmModelo";
 	}
 

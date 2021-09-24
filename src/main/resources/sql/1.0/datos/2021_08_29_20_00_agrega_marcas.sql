@@ -63,6 +63,9 @@ begin
         VALUES ('DIMEX');
 
     INSERT INTO MARCA (nombre)
+        VALUES ('DODGE');
+
+    INSERT INTO MARCA (nombre)
         VALUES ('DUCATI');
 
     INSERT INTO MARCA (nombre)
@@ -138,6 +141,9 @@ begin
         VALUES ('JAGUAR');
 
     INSERT INTO MARCA (nombre)
+        VALUES ('JEEP');
+
+    INSERT INTO MARCA (nombre)
         VALUES ('JINBEI');
 
     INSERT INTO MARCA (nombre)
@@ -156,10 +162,22 @@ begin
         VALUES ('KIA');
 
     INSERT INTO MARCA (nombre)
+        VALUES ('KYC');
+
+    INSERT INTO MARCA (nombre)
         VALUES ('LADA');
 
     INSERT INTO MARCA (nombre)
+        VALUES ('LAND ROVER');
+
+    INSERT INTO MARCA (nombre)
+        VALUES ('LEXUS');
+
+    INSERT INTO MARCA (nombre)
         VALUES ('LIFAN');
+
+    INSERT INTO MARCA (nombre)
+        VALUES ('LOTUS');
 
     INSERT INTO MARCA (nombre)
         VALUES ('LUCKY LION');
@@ -210,6 +228,9 @@ begin
         VALUES ('PROTON');
 
     INSERT INTO MARCA (nombre)
+        VALUES ('RAM');
+
+    INSERT INTO MARCA (nombre)
         VALUES ('RENAULT');
 
     INSERT INTO MARCA (nombre)
@@ -241,6 +262,9 @@ begin
 
     INSERT INTO MARCA (nombre)
         VALUES ('SPACE');
+
+    INSERT INTO MARCA (nombre)
+        VALUES ('SSANGYONG');
 
     INSERT INTO MARCA (nombre)
         VALUES ('STAR (3-STAR)');
