@@ -37,13 +37,13 @@ public class TipoVehiculoController {
 	@PostMapping("/saveTipoVehiculo")
 	public String save(TipoVehiculo vehiculo, Model model) {
 		tipoVehiculoService.save(vehiculo);
-		return "redirect:/" + GeneralPath.TIPO_VEHICULO + GeneralPath.PATH_SEPARATOR + "abmTipoVehiculo";
+		return "redirect:/" + "abmTipoVehiculo";
 	}
 
 	@GetMapping("/deleteTipoVehiculo/{id}")
 	public String delete(@PathVariable("id") Long id, Model model) {
 		tipoVehiculoService.delete(id);
-		return "redirect:/" + GeneralPath.TIPO_VEHICULO + GeneralPath.PATH_SEPARATOR + "abmTipoVehiculo";
+		return "redirect:/" + "abmTipoVehiculo";
 	}
 
 }

@@ -46,13 +46,13 @@ public class ModeloController {
 	@PostMapping("/saveModelo")
 	public String savE(Modelo modelo, Model model) {
 		modeloService.save(modelo);
-		return "redirect:/" + GeneralPath.MODELO + GeneralPath.PATH_SEPARATOR +  "abmModelo";
+		return "redirect:/" +  "abmModelo";
 	}
 
 	@GetMapping("/deleteModelo/{id}")
 	public String delete(@PathVariable("id") Long id, Model model) {
 		modeloService.delete(id);
-		return "redirect:/" + GeneralPath.MODELO + GeneralPath.PATH_SEPARATOR + "abmModelo";
+		return "redirect:/" + "abmModelo";
 	}
 
 }

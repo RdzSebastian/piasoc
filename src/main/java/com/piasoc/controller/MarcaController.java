@@ -37,12 +37,12 @@ public class MarcaController {
 	@PostMapping("/saveMarca")
 	public String save(Marca marca, Model model) {
 		marcaService.save(marca);
-		return "redirect:/" + GeneralPath.MARCA + GeneralPath.PATH_SEPARATOR +  "abmMarca";
+		return "redirect:/" + "abmMarca";
 	}
 
 	@GetMapping("/deleteMarca/{id}")
 	public String delete(@PathVariable("id") Long id, Model model) {
 		marcaService.delete(id);
-		return "redirect:/" + GeneralPath.MARCA + GeneralPath.PATH_SEPARATOR +  "abmMarca";
+		return "redirect:/" +  "abmMarca";
 	}
 }
