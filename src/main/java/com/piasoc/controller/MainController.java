@@ -50,7 +50,12 @@ public class MainController {
 		anio.add(2019);
 		model.addAttribute("anios", anio);
 
-		return "cotizacion";
+		return "pages/cotizacion";
+	}
+	
+	@RequestMapping("/seguros")
+	public String seguros(Model model) {
+		return "pages/seguros";
 	}
 
 }

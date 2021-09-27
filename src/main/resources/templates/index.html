@@ -5,10 +5,12 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="./css/index.css" />
 	<!-- Bootstrap CSS -->
 	<link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}">
 	<script src="https://kit.fontawesome.com/fc93a7f461.js" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="./css/index.css" />
+
 	<title>Paula Iglesias y Asociados</title>
 </head>
 
@@ -29,16 +31,21 @@
 					<!-- Seguros menú, position relaive (hover). Seguros sub-menu, position absolute -->
 					<li class="menu-item seguros-menu">
 						<a href="" class="item-seguros">Seguros <i class="fas fa-chevron-down"></i></a>
-						<ul class="seguros-submenu">
-							<li><a href="">Empresas</a></li>
-							<li><a href="">Personas</a></li>
+						<ul class="items-submenu">
+							<li><a href="/pages/seguros.html#empresas">Empresas</a></li>
+							<li><a href="/pages/seguros.html#personas">Personas</a></li>
 						</ul>
 					</li>
 					<li class="menu-item">
 						<a href="">Siniestros</a>
 					</li>
-					<li class="menu-item">
-						<a href="">Cotización <i class="fas fa-chevron-down"></i></a>
+					<li class="menu-item cotizacion-menu">
+						<a href="" class="item-cotizacion">Cotización <i class="fas fa-chevron-down"></i></a>
+						<ul class="items-submenu">
+							<li><a href="">Automóviles</a></li>
+							<li><a href="">Riesgos varios</a></li>
+							<li><a href="">ART</a></li>
+						</ul>
 					</li>
 					<li class="menu-item">
 						<a href="">Contacto</a>
@@ -56,6 +63,7 @@
 			<div class="slider-container" id="slider-container">
 				<div class="slider-section">
 					<img src="./imgs/img-1.png" alt="" class="slider-img">
+					<!-- parrafo absoluto al div contenedor: slider-secion -->
 				</div>
 				<div class="slider-section">
 					<img src="./imgs/img-2.png" alt="" class="slider-img">
@@ -95,11 +103,15 @@
 					<img src="./imgs/prueba.png" alt="">
 				</div>
 
-				<p>Somos una empresa de productores de seguros 
-					que se inició de forma independiente en el año 1980.
-					Desde entonces, nos enfocamos en ofrecer 
-					el mejor servicio a nuestros clientes.
-				</p>
+				<div class="descripcion-quienes-somos">
+					<p>Somos una empresa de productores de seguros que se inició de forma independiente en el año 1980.
+						Desde entonces, nos enfocamos en ofrecer el mejor servicio a nuestros clientes.
+					</p>
+				</div>
+			</div>
+
+			<div class="contenedor-btn-seguros">
+				<a th:href="@{/seguros}" class="btn-seguros">Seguros</a>
 			</div>
 		</section>
 
