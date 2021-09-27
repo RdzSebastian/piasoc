@@ -14,13 +14,20 @@
 		<h2>Agregar Modelo</h2>
 		<form action="#" th:action="@{/saveModelo}" method="post" th:object="${modelo}">
 			<input type="hidden" th:field="*{id}" name="id" id="id">
-			<div class="form-group">
-				<label for="tipo_vehiculo">Tipo</label> 
-				<input type="number" class="form-control" id="tipo_vehiculo" th:field="*{tipoVehiculo}" name="tipo_vehiculo">
+
+			<div th:object="${tipos}" class="form-group">
+				<label for="tipo_vehiculo">Tipo de vehiculo</label> 
+				<select class="form-select" id="tipo_vehiculo" name="tipo_vehiculo">
+					<option selected hidden>Tipo de vehiculo</option>
+					<option th:each="tipo: ${tipos}" th:value="${tipo}" th:text="${tipo}" th:field="*{nombre}" name="nombre"/>
+				</select>
 			</div>
-			<div class="form-group">
-				<label for="marca">Marca</label> 
-				<input type="number" class="form-control" id="marca" th:field="*{marca}" name="marca">
+			<div th:object="${marcas}" class="form-group">
+				<label for="marca">Marca</label>
+				<select class="form-select" id="marca" name="marca">
+					<option selected hidden>Marca</option>
+					<option th:each="marcaS : ${marcas}" th:text="${marcaS}" th:field="*{nombre}" name="nombre"/>
+				</select>
 			</div>
 			<div class="form-group">
 				<label for="nombre">Modelo</label> 
