@@ -23,6 +23,11 @@ public class MainController {
 	private ModeloService modeloService;
 
 	@RequestMapping("/")
+	public String mantenimiento(Model model) {
+		return "mantenimiento";
+	}
+
+	@RequestMapping("/index")
 	public String index(Model model) {
 		return "index";
 	}
