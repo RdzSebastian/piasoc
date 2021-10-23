@@ -26,29 +26,42 @@
 			<thead>
 				<div class="container">
 					<div class="row">
+					
 						<div class="col">
-							<select class="form-select" id="tipo" name="tipo">
+
+							<select class="form-select" id="tipoVehiculo">
 								<option selected hidden>Tipo de vehiculo</option>
-								<option th:each="tipo : ${tipos}" th:value="${tipo}" th:text="${tipo}"/>
+								<option th:each="modelo : ${listaModelo}" th:class="${modelo.tipoVehiculo.nombre}" th:text="${modelo.tipoVehiculo.nombre}"/>
 							</select>
+
 						</div>
+						
+						
+						
 						<div class="col">
-							<select class="form-select">
+
+							
+							<select class="form-select" id="marca">
 								<option selected hidden>Marca</option>
-								<option th:each="marca : ${marcas}" th:text="${marca}"/>
+								<option th:each="modelo : ${listaModelo}" th:classappend="${modelo.marca.nombre} + ' ' + ${modelo.tipoVehiculo.nombre}" th:text="${modelo.marca.nombre}"/>
 							</select>
+								
+
+						</div>
+
+						<div class="col">
+						
+							<select class="form-select" id="modelo">
+								<option selected hidden>Modelo</option>
+								<option th:each="modelo : ${listaModelo}" th:classappend="${modelo.nombre} + ' ' + ${modelo.marca.nombre} + ' ' + ${modelo.tipoVehiculo.nombre}" th:text="${modelo.nombre}"/>
+							</select>
+							
 						</div>
 						
 						<div class="col">
 							<select class="form-select">
 								<option selected hidden>Año</option>
-								<option th:each="anio : ${anios}" th:text="${anio}"/>
-							</select>
-						</div>
-						<div class="col">
-							<select class="form-select">
-								<option selected hidden>Modelo</option>
-								<option th:each="modelo : ${modelos}" th:text="${modelo}"/>
+								<option th:each="anio : ${anios}" th:value="${anio}" th:text="${anio}"/>
 							</select>
 						</div>
 					</div>
@@ -56,6 +69,7 @@
 			</thead>
 		</table>
 	</div>
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="./js/cotizacion.js"></script>
 </body>
-
 </html>
