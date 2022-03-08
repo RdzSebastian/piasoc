@@ -1,9 +1,6 @@
 package com.piasoc.controller;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,13 +14,21 @@ import com.piasoc.commons.GeneralPath;
 import com.piasoc.model.Marca;
 import com.piasoc.model.Modelo;
 import com.piasoc.model.TipoVehiculo;
+import com.piasoc.service.MarcaService;
 import com.piasoc.service.ModeloService;
+import com.piasoc.service.TipoVehiculoService;
 
 @Controller
 public class ModeloController {
 
 	@Autowired
 	private ModeloService modeloService;
+	
+	@Autowired
+	private TipoVehiculoService tipoVehiculoService;
+	
+	@Autowired
+	private MarcaService marcaService;
 
 	@RequestMapping("/abmModelo")
 	public String abm(Model model) {
@@ -39,17 +44,11 @@ public class ModeloController {
 
 	@GetMapping("/saveModelo/{id}")
 	public String showSave(@PathVariable("id") Long id, Model model) {
-		List<Modelo> modelos = modeloService.getAll();
-
-		List<TipoVehiculo> tiposVehiculos = modelos.stream().map(Modelo::getTipoVehiculo).collect(Collectors.toList());
-		List<String> tiposVehiculosS = tiposVehiculos.stream().map(TipoVehiculo::getNombre).collect(Collectors.toList());
-		Set<String> tiposVehiculosSet = new HashSet<String>(tiposVehiculosS);
-		model.addAttribute("tipos", tiposVehiculos);
+		List<TipoVehiculo> listaTipoVehiculo = tipoVehiculoService.getAll();
+		model.addAttribute("listaTipoVehiculo", listaTipoVehiculo);
 		
-		List<Marca> marcas = modelos.stream().map(Modelo::getMarca).collect(Collectors.toList());
-		List<String> marcasS = marcas.stream().map(Marca::getNombre).collect(Collectors.toList());
-		Set<String> marcasSet = new HashSet<String>(marcasS);
-		model.addAttribute("marcas", marcas);
+		List<Marca> listaMarca = marcaService.getAll();
+		model.addAttribute("listaMarca", listaMarca);
 		
 		if(id != null && id != 0) {
 			model.addAttribute("modelo", modeloService.get(id));
