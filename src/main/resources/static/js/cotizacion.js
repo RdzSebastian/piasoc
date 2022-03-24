@@ -10,6 +10,9 @@ $(document).ready(function () {
             $(j).appendTo('#marca');
         });
         
+        addHiddenFirstOptionOnSelect("marca", "Seleccione marca");
+        addHiddenFirstOptionOnSelect("modelo", "Seleccione modelo");
+
 		var optionMarca =[];
 		$('#marca option').each(function(){
 		   if($.inArray(this.value, optionMarca) >-1){
@@ -30,6 +33,7 @@ $(document).ready(function () {
             $(j).appendTo('#modelo');
         });
         
+        addHiddenFirstOptionOnSelect("modelo", "Seleccione modelo");
 
     });
     
@@ -44,5 +48,15 @@ $(document).ready(function () {
 	   }
 	});
 
+
+	function addHiddenFirstOptionOnSelect(elemento, valor) {
+	  var x = document.getElementById(elemento);
+	  var option = document.createElement("option");
+	  option.value = valor;
+	  option.text = valor;
+	  option.defaultSelected = true
+	  option.hidden = true
+	  x.add(option);
+	}
 
 });
