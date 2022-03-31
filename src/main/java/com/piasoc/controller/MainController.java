@@ -28,8 +28,8 @@ public class MainController {
 		return "index";
 	}
 
-	@RequestMapping("/cotizacion")
-	public String cotizacion(Model model) {
+	@RequestMapping("/seleccionarVehiculo")
+	public String seleccionarVehiculo(Model model) {
 		
 		List<Modelo> modelos = modeloService.getAll();
 		for (Modelo modelo : modelos) {
@@ -48,6 +48,11 @@ public class MainController {
         }
 		model.addAttribute("anios", anios);
 
+		return "pages/seleccionarVehiculo";
+	}
+	
+	@RequestMapping("/cotizacion")
+	public String cotizacion(Model model) {
 		return "pages/cotizacion";
 	}
 	
