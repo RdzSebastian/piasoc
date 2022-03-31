@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Cotizacion</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- MATERIAL DESIGN ICONIC FONT -->
+	<link rel="stylesheet" href="../fonts/material-design-iconic-font/css/material-design-iconic-font.css">
+
+	<!-- STYLE CSS -->
+	<link rel="stylesheet" href="../css/cotizacion.css">
+
+</head>
+
+<body>
+		<div class="wrapper">
+			<div class="image-holder">
+				<img src="../imgs/form-wizard.png" alt="">
+			</div>
+            <form action="">
+            	<div id="wizard">
+            		<!-- SECTION 1 -->
+	                <h4></h4>
+	                <section>
+	                    <div class="">
+							<div class="pregunta">
+			                	<h2>¿Es de uso particular?</h2>
+    			             	<div class="form-row form-group">
+					                <div class="radio">
+					                  <label>
+					                    <input type="radio" name="uso-particular" value="Sí" id="uso-particular_0" data-descuento="3">
+					                    Sí</label>
+					                </div>
+					                <div class="radio">
+					                  <label>
+					                    <input type="radio" name="uso-particular" value="No" id="uso-particular_1">
+					                    No</label>
+					                </div>
+					        	</div>
+			              	</div>
+			              	<div class="pregunta">
+				                <h2>¿Tiene alarma?</h2>
+				                <div class="form-row form-group">
+					                <div class="radio">
+					                  <label>
+					                    <input type="radio" name="tiene-alarma" value="Sí" id="tiene-alarma_0" data-descuento="2">
+					                    Sí</label>
+					                </div>
+					                <div class="radio">
+					                  <label>
+					                    <input type="radio" name="tiene-alarma" value="No" id="tiene-alarma_1">
+					                    No</label>
+					                </div>
+					        	</div>    
+			              	</div>
+							<div class="pregunta">
+				                <h2>¿Se guarda en garage?</h2>
+				               	<div class="form-row form-group">
+					                <div class="radio">
+					                  <label>
+					                    <input type="radio" name="guarda-garage" value="Sí" id="guarda-garage_0" data-descuento="6">
+					                    Sí</label>
+					                </div>
+					                <div class="radio">
+					                  <label>
+					                    <input type="radio" name="guarda-garage" value="No" id="guarda-garage_1">
+					                    No</label>
+					                </div>
+								</div>
+							</div>
+						</div>
+						
+						
+	                </section>
+					<!-- SECTION 2 -->
+	                <h4></h4>
+	                <section>
+	                	<div class="pregunta radio-block">
+		                	<h2>¿Cuántos KMS manejás al año?</h2>
+			                <div class="radio">
+			                  <label>
+			                    <input type="radio" name="kms-por-anio" value="Hasta 8.000 km " id="kms-por-anio_0" data-descuento="13">
+			                    Hasta 8.000 km </label>
+			                </div>
+			                <div class="radio">
+			                  <label>
+			                    <input type="radio" name="kms-por-anio" value="De 8.001 a 15.000 km" id="kms-por-anio_1" data-descuento="7">
+			                    De 8.001 a 15.000 km</label>
+			                </div>
+			                <div class="radio">
+			                  <label>
+			                    <input type="radio" name="kms-por-anio" value="De 15.001 a 30.000 km" id="kms-por-anio_2" data-descuento="4">
+			                    De 15.001 a 30.000 km</label>
+			                </div>
+			                <div class="radio">
+			                  <label>
+			                    <input type="radio" name="kms-por-anio" value="Más de 30.000 km" id="kms-por-anio_3" data-descuento="-3">
+			                    Más de 30.000 km</label>
+			                </div>
+						</div>
+	                </section>
+
+	                <!-- SECTION 3 -->
+	                <h4></h4>
+	                <section>
+		            	<div>
+		                    <!-- pregunta -->
+			              	<div class="pregunta radio-block">
+				                <h2>Edad</h2>
+				                <div class="radio">
+				                  <label>
+				                    <input type="radio" name="fecha-nacimiento" value="Menos 23 años" id="fecha-nacimiento_0" data-descuento="-4">
+				                    Menos 23 años</label>
+				                </div>
+				                <div class="radio">
+				                  <label>
+				                    <input type="radio" name="fecha-nacimiento" value="Entre 23 y 30 años" id="fecha-nacimiento_1" data-descuento="7">
+				                    Entre 23 y 30 años</label>
+				                </div>
+				                <div class="radio">
+				                  <label>
+				                    <input type="radio" name="fecha-nacimiento" value="Entre 30 y 55 años" id="fecha-nacimiento_2" data-descuento="11">
+				                    Entre 30 y 55 años</label>
+				                </div>
+				                <div class="radio">
+				                  <label>
+				                    <input type="radio" name="fecha-nacimiento" value="Entre 55 y 65 años" id="fecha-nacimiento_3" data-descuento="7">
+				                    Entre 55 y 65 años</label>
+				                </div>
+				                <div class="radio">
+				                  <label>
+				                    <input type="radio" name="fecha-nacimiento" value="Entre 65 y 70 años" id="fecha-nacimiento_4" data-descuento="5">
+				                    Entre 65 y 70 años</label>
+				                </div>
+				                <div class="radio">
+				                  <label>
+				                    <input type="radio" name="fecha-nacimiento" value="Entre 70 y 75 años" id="fecha-nacimiento_4">
+				                    Entre 70 y 75 años</label>
+				                </div>                
+				                <div class="radio">
+				                  <label>
+				                    <input type="radio" name="fecha-nacimiento" value="Más de 75 años" id="fecha-nacimiento_5" data-descuento="-3">
+				                    Más de 75 años</label>
+				                </div>
+				              </div>
+				              <div class="pregunta">
+				                <h2>Además de usted, ¿manejan el auto sus hijos?</h2>
+				                <div class="form-row form-group">
+					                <div class="radio">
+					                  <label>
+					                    <input type="radio" name="manejan-hijos" value="Sí" id="manejan-hijos_0" data-descuento="-3">
+					                    Sí</label>
+					                </div>
+					                <div class="radio">
+					                  <label>
+					                    <input type="radio" name="manejan-hijos" value="No" id="manejan-hijos_1">
+					                    No</label>
+					                </div>
+			              		</div>
+			              	</div>
+						</div>	
+	                </section>
+
+	                <!-- SECTION 4 -->
+	                <h4></h4>
+
+	                
+	                <section>
+	                    <div class="form-row form-group">
+	                    	<div class="form-holder">
+	                    		<label for="">
+	                    			Nombre
+		                    	</label>
+	                    		<input type="text" class="form-control">
+	                    	</div>
+	                    	<div class="form-holder">
+	                    		<label for="">
+	                    			Apellido
+		                    	</label>
+	                    		<input type="text" class="form-control">
+	                    	</div>
+	                    </div>
+	                    <label for="">
+	                    	Sexo
+		                </label>
+		             	<div class="form-row form-group">
+			                <div class="radio">
+			                  <label>
+			                    <input type="radio" name="tiene-alarma" value="Sí" id="tiene-alarma_0" data-descuento="2">
+			                    Masculino</label>
+			                </div>
+			                <div class="radio">
+			                  <label>
+			                    <input type="radio" name="tiene-alarma" value="No" id="tiene-alarma_1">
+			                    Femenino</label>
+					        </div>
+					        <div class="radio">
+			                  <label>
+			                    <input type="radio" name="tiene-alarma" value="No" id="tiene-alarma_1">
+			                    Otro</label>
+					        </div>
+					    </div>
+	                    <div class="form-row">
+	                    	<label for="">
+	                    		Nombre de la compania (Opcional)
+	                    	</label>
+	                    	<input type="text" class="form-control">
+	                    </div>	
+	                    <div class="form-row">
+	                    	<label for="">
+	                    		Ciudad
+	                    		<input type="text" class="form-control">
+	                    	</label>
+
+	                    <div class="form-row">
+	                    	<label for="">
+	                    		Provincia
+	                    	</label>
+							<input type="text" class="form-control">
+	                    </div>	
+	                    <div class="form-row">
+	                    	<label for="">
+	                    		Código Postal
+	                    	</label>
+							<input type="text" class="form-control">
+	                    </div>
+	                    
+	                   <div class="form-row">
+	                    	<label for="">
+	                    		E-mail
+	                    	</label>
+	                    	<input type="text" class="form-control">
+	                    </div>
+	                    <div class="form-row">
+	                    	<label for="">
+	                    		Celular
+	                    	</label>
+	                    	<input type="text" class="form-control">
+	                    </div>
+	                    <div class="form-row">
+	                    	<label for="">
+	                    		Comentarios
+	                    	</label>
+	                    	<input type="text" class="form-control">
+	                    </div>
+	                </section>
+            	</div>
+            </form>
+		</div>
+
+		<script src="../vendor/jquery/jquery-3.3.1.min.js"></script>
+		
+		<!-- JQUERY STEP -->
+		<script src="../vendor/jquery/jquery.steps.js"></script>
+
+		<script src="../js/cotizacion.js"></script>
+<!-- Template created and distributed by Colorlib -->
+</body>
+</html>
