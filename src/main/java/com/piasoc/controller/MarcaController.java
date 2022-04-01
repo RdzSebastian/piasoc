@@ -21,7 +21,7 @@ public class MarcaController {
 	@RequestMapping("/abmMarca")
 	public String abm(Model model) {
 		model.addAttribute("listaMarca", marcaService.getAll());
-		return GeneralPath.MARCA + GeneralPath.PATH_SEPARATOR + "abmMarca";
+		return GeneralPath.MARCA + GeneralPath.PATH_SEPARATOR + GeneralPath.ABM_MARCA;
 	}
 	
 	@GetMapping("/saveMarca/{id}")
@@ -31,18 +31,18 @@ public class MarcaController {
 		}else {
 			model.addAttribute("marca", new Marca());
 		}
-		return GeneralPath.MARCA + GeneralPath.PATH_SEPARATOR + "saveMarca";
+		return GeneralPath.MARCA + GeneralPath.PATH_SEPARATOR + GeneralPath.SAVE_MARCA;
 	}
 	
 	@PostMapping("/saveMarca")
 	public String save(Marca marca, Model model) {
 		marcaService.save(marca);
-		return "redirect:/" + "abmMarca";
+		return GeneralPath.REDIRECT + GeneralPath.ABM_MARCA;
 	}
 
 	@GetMapping("/deleteMarca/{id}")
 	public String delete(@PathVariable("id") Long id, Model model) {
 		marcaService.delete(id);
-		return "redirect:/" +  "abmMarca";
+		return GeneralPath.REDIRECT +  GeneralPath.ABM_MARCA;
 	}
 }

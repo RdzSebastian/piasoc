@@ -39,7 +39,7 @@ public class ModeloController {
 		    }
 		}
 		model.addAttribute("listaModelo", modelos);
-		return GeneralPath.MODELO + GeneralPath.PATH_SEPARATOR + "abmModelo";
+		return GeneralPath.MODELO + GeneralPath.PATH_SEPARATOR + GeneralPath.ABM_MODELO;
 	}
 
 	@GetMapping("/saveModelo/{id}")
@@ -55,19 +55,19 @@ public class ModeloController {
 		}else {
 			model.addAttribute("modelo", new Modelo());
 		}
-		return GeneralPath.MODELO + GeneralPath.PATH_SEPARATOR + "saveModelo";
+		return GeneralPath.MODELO + GeneralPath.PATH_SEPARATOR + GeneralPath.SAVE_MODELO;
 	}
 
 	@PostMapping("/saveModelo")
 	public String save(Modelo modelo, Model model) {
 		modeloService.save(modelo);
-		return "redirect:/" +  "abmModelo";
+		return GeneralPath.REDIRECT +  GeneralPath.ABM_MODELO;
 	}
 
 	@GetMapping("/deleteModelo/{id}")
 	public String delete(@PathVariable("id") Long id, Model model) {
 		modeloService.delete(id);
-		return "redirect:/" + "abmModelo";
+		return GeneralPath.REDIRECT + GeneralPath.ABM_MODELO;
 	}
 
 }
