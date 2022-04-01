@@ -18,16 +18,6 @@ public class MainController {
 	@Autowired
 	private ModeloService modeloService;
 
-	@RequestMapping("/")
-	public String mantenimiento(Model model) {
-		return "mantenimiento";
-	}
-
-	@RequestMapping("/index")
-	public String index(Model model) {
-		return "index";
-	}
-
 	@RequestMapping("/seleccionarVehiculo")
 	public String seleccionarVehiculo(Model model) {
 		
