@@ -1,5 +1,7 @@
 package com.piasoc.model;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,6 +26,12 @@ public class Cliente {
 	@ManyToOne
 	@JoinColumn(name = "sexo_id")
 	private Sexo sexo;
+
+	@Column
+	private int cuil;
+
+	@Column(name = "fecha_nacimiento")
+	private Date fechaNacimiento;
 
 	@Column
 	private String empresa;
@@ -76,6 +84,22 @@ public class Cliente {
 
 	public void setSexo(Sexo sexo) {
 		this.sexo = sexo;
+	}
+
+	public int getCuil() {
+		return cuil;
+	}
+
+	public void setCuil(int cuil) {
+		this.cuil = cuil;
+	}
+
+	public Date getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
 	}
 
 	public String getEmpresa() {

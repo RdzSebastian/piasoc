@@ -17,11 +17,12 @@
 </head>
 
 <body>
+
 		<div class="wrapper">
 			<div class="image-holder">
 				<img src="../imgs/form-wizard.png" alt="">
 			</div>
-            <form action="">
+			<form th:action="@{/saveCotizacion}" method="post" th:object="${cotizacion}" id="signup-form" class="signup-form">
             	<div id="wizard">
             		<!-- SECTION 1 -->
 	                <h4></h4>
@@ -82,25 +83,13 @@
 	                	<div class="pregunta radio-block">
 		                	<h2>¿Cuántos KMS manejás al año?</h2>
 			                <div class="radio">
-			                  <label>
-			                    <input type="radio" name="kms-por-anio" value="Hasta 8.000 km " id="kms-por-anio_0" data-descuento="13">
-			                    Hasta 8.000 km </label>
-			                </div>
-			                <div class="radio">
-			                  <label>
-			                    <input type="radio" name="kms-por-anio" value="De 8.001 a 15.000 km" id="kms-por-anio_1" data-descuento="7">
-			                    De 8.001 a 15.000 km</label>
-			                </div>
-			                <div class="radio">
-			                  <label>
-			                    <input type="radio" name="kms-por-anio" value="De 15.001 a 30.000 km" id="kms-por-anio_2" data-descuento="4">
-			                    De 15.001 a 30.000 km</label>
-			                </div>
-			                <div class="radio">
-			                  <label>
-			                    <input type="radio" name="kms-por-anio" value="Más de 30.000 km" id="kms-por-anio_3" data-descuento="-3">
-			                    Más de 30.000 km</label>
-			                </div>
+			                  	<ul>
+						            <li th:each="intervaloKilometros : ${listaIntervaloKilometros}">
+						                <input type="radio" th:field="*{datosVehiculo.intervaloKilometros}" th:value="${intervaloKilometros.id}" />
+						                <label th:for="${intervaloKilometros.intervalo}" th:text="${intervaloKilometros.intervalo}"></label>
+						            </li>
+						        </ul>
+							</div>						        
 						</div>
 	                </section>
 
@@ -112,40 +101,12 @@
 			              	<div class="pregunta radio-block">
 				                <h2>Edad</h2>
 				                <div class="radio">
-				                  <label>
-				                    <input type="radio" name="fecha-nacimiento" value="Menos 23 años" id="fecha-nacimiento_0" data-descuento="-4">
-				                    Menos 23 años</label>
-				                </div>
-				                <div class="radio">
-				                  <label>
-				                    <input type="radio" name="fecha-nacimiento" value="Entre 23 y 30 años" id="fecha-nacimiento_1" data-descuento="7">
-				                    Entre 23 y 30 años</label>
-				                </div>
-				                <div class="radio">
-				                  <label>
-				                    <input type="radio" name="fecha-nacimiento" value="Entre 30 y 55 años" id="fecha-nacimiento_2" data-descuento="11">
-				                    Entre 30 y 55 años</label>
-				                </div>
-				                <div class="radio">
-				                  <label>
-				                    <input type="radio" name="fecha-nacimiento" value="Entre 55 y 65 años" id="fecha-nacimiento_3" data-descuento="7">
-				                    Entre 55 y 65 años</label>
-				                </div>
-				                <div class="radio">
-				                  <label>
-				                    <input type="radio" name="fecha-nacimiento" value="Entre 65 y 70 años" id="fecha-nacimiento_4" data-descuento="5">
-				                    Entre 65 y 70 años</label>
-				                </div>
-				                <div class="radio">
-				                  <label>
-				                    <input type="radio" name="fecha-nacimiento" value="Entre 70 y 75 años" id="fecha-nacimiento_4">
-				                    Entre 70 y 75 años</label>
-				                </div>                
-				                <div class="radio">
-				                  <label>
-				                    <input type="radio" name="fecha-nacimiento" value="Más de 75 años" id="fecha-nacimiento_5" data-descuento="-3">
-				                    Más de 75 años</label>
-				                </div>
+					              	<ul>
+							            <li th:each="intervaloEdad : ${listaIntervaloEdad}">
+							                <input type="radio" th:field="*{datosVehiculo.intervaloEdad}" th:value="${intervaloEdad.id}" />
+							                <label th:for="${intervaloEdad.intervalo}" th:text="${intervaloEdad.intervalo}"></label>
+							            </li>
+							        </ul>
 				              </div>
 				              <div class="pregunta">
 				                <h2>Además de usted, ¿maneja el auto un menor de 25 años?</h2>
@@ -175,92 +136,79 @@
 	                    		<label for="">
 	                    			Nombre
 		                    	</label>
-	                    		<input type="text" class="form-control">
+	                    		<input type="text" class="form-control" id="nombre" th:field="*{cliente.nombre}" name="nombre">
 	                    	</div>
 	                    	<div class="form-holder">
 	                    		<label for="">
 	                    			Apellido
 		                    	</label>
-	                    		<input type="text" class="form-control">
+								<input type="text" class="form-control" id="apellido" th:field="*{cliente.apellido}" name="apellido">
 	                    	</div>
 	                    </div>
 	                    <label for="">
 	                    	Sexo
 		                </label>
-		             	<div class="form-row form-group">
-			                <div class="radio">
-			                  <label>
-			                    <input type="radio" name="tiene-alarma" value="Sí" id="tiene-alarma_0" data-descuento="2">
-			                    Masculino</label>
-			                </div>
-			                <div class="radio">
-			                  <label>
-			                    <input type="radio" name="tiene-alarma" value="No" id="tiene-alarma_1">
-			                    Femenino</label>
-					        </div>
-					        <div class="radio">
-			                  <label>
-			                    <input type="radio" name="tiene-alarma" value="No" id="tiene-alarma_1">
-			                    Otro</label>
-					        </div>
+		             	<div class="form-group" style="margin-bottom: 24px;">
+				            <li class="radio" style="display: inline;" th:each="sexo : ${listaSexo}">
+				                <input type="radio" th:field="*{datosVehiculo.intervaloEdad}" th:value="${sexo.id}" />
+				                <label th:for="${sexo.nombre}" th:text="${sexo.nombre}"></label>
+				            </li>
 					    </div>
 					    <div class="form-row">
 	                    	<label for="">
 	                    		CUIT/CUIL
 	                    	</label>
-	                    	<input type="text" class="form-control">
-	                    </div>	
-	                    <div class="form-row">
-	                    	<label for="">
-	                    		Fecha de nacimiento
-	                    	</label>
-	                    	<input type="text" class="form-control">
-	                    </div>	
+							<input type="text" class="form-control" id="cuil" th:field="*{cliente.cuil}" name="cuil">	
+						</div>
+						<div class="form-row">
+                            <label for="Fecha de nacimiento" class="form-label">Fecha de Nacimiento</label> 
+							<input type="date" class="form-control" id="fechaNacimiento" th:field="*{cliente.fechaNacimiento}" name="fechaNacimiento">
+                        </div>
 	                    <div class="form-row">
 	                    	<label for="">
 	                    		Nombre de la empresa (Opcional)
 	                    	</label>
-	                    	<input type="text" class="form-control">
+							<input type="text" class="form-control" id="empresa" th:field="*{cliente.empresa}" name="empresa">	
 	                    </div>	
 	                    <div class="form-row">
 	                    	<label for="">
 	                    		Ciudad
-	                    		<input type="text" class="form-control">
+							<input type="text" class="form-control" id="ciudad" th:field="*{cliente.ciudad}" name="ciudad">	
 	                    	</label>
 
 	                    <div class="form-row">
 	                    	<label for="">
 	                    		Provincia
 	                    	</label>
-							<input type="text" class="form-control">
+							<input type="text" class="form-control" id="provincia" th:field="*{cliente.provincia}" name="provincia">
 	                    </div>	
 	                    <div class="form-row">
 	                    	<label for="">
 	                    		Código Postal
 	                    	</label>
-							<input type="text" class="form-control">
-	                    </div>
-	                    
+							<input type="text" class="form-control" id="codigoPostal" th:field="*{cliente.codigoPostal}" name="codigoPostal">
+						</div>
 	                   <div class="form-row">
 	                    	<label for="">
 	                    		E-mail
 	                    	</label>
-	                    	<input type="text" class="form-control">
+							<input type="text" class="form-control" id="email" th:field="*{cliente.email}" name="email">
 	                    </div>
 	                    <div class="form-row">
 	                    	<label for="">
 	                    		Celular
 	                    	</label>
-	                    	<input type="text" class="form-control">
-	                    </div>
+							<input type="number" class="form-control" id="celular" th:field="*{cliente.celular}" name="celular">
+						</div>
 	                    <div class="form-row">
 	                    	<label for="">
 	                    		Comentarios
 	                    	</label>
-	                    	<input type="text" class="form-control">
+							<input type="text" class="form-control" id="comentarios" th:field="*{cliente.comentarios}" name="comentarios">
 	                    </div>
 	                </section>
             	</div>
+                <button type="submit" style="display:none;"></button>
             </form>
 		</div>
 
@@ -270,6 +218,7 @@
 		<script src="../vendor/jquery/jquery.steps.js"></script>
 
 		<script src="../js/cotizacion.js"></script>
+		
 <!-- Template created and distributed by Colorlib -->
 </body>
 </html>

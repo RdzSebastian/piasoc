@@ -30,6 +30,9 @@ $(function(){
             finish: "Finalizar",
             next: "Siguiente",
             previous: "Atras"
+        },
+        onFinished: function(event, currentIndex) {
+            $('button[type="submit"]').trigger('click');
         }
     });
     // Custom Steps Jquery Steps
