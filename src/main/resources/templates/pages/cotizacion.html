@@ -24,63 +24,63 @@
 			</div>
 			<form th:action="@{/saveCotizacion}" method="post" th:object="${cotizacion}" id="signup-form" class="signup-form">
             	<div id="wizard">
+
             		<!-- SECTION 1 -->
 	                <h4></h4>
 	                <section>
 	                    <div class="">
-							<div class="pregunta">
+							<div>
 			                	<h2>¿Es de uso particular?</h2>
     			             	<div class="form-row form-group">
 					                <div class="radio">
 					                  <label>
-					                    <input type="radio" name="uso-particular" value="Sí" id="uso-particular_0" data-descuento="3">
-					                    Sí</label>
+					                    <input type="radio" th:field="*{datosVehiculo.particular}" th:value="1" id="particular.1">
+					                    Si</label>
 					                </div>
 					                <div class="radio">
 					                  <label>
-					                    <input type="radio" name="uso-particular" value="No" id="uso-particular_1">
+					                    <input type="radio" th:field="*{datosVehiculo.particular}" th:value="0" id="particular.0">
 					                    No</label>
 					                </div>
 					        	</div>
 			              	</div>
-			              	<div class="pregunta">
+			              	<div>
 				                <h2>¿Tiene alarma?</h2>
 				                <div class="form-row form-group">
 					                <div class="radio">
 					                  <label>
-					                    <input type="radio" name="tiene-alarma" value="Sí" id="tiene-alarma_0" data-descuento="2">
-					                    Sí</label>
+					                    <input type="radio" th:field="*{datosVehiculo.alarma}" th:value="1" id="alarma.1">
+					                    Si</label>
 					                </div>
 					                <div class="radio">
 					                  <label>
-					                    <input type="radio" name="tiene-alarma" value="No" id="tiene-alarma_1">
+					                    <input type="radio" th:field="*{datosVehiculo.alarma}" th:value="0" id="alarma.0">
 					                    No</label>
 					                </div>
 					        	</div>    
 			              	</div>
-							<div class="pregunta">
+							<div>
 				                <h2>¿Se guarda en garage?</h2>
 				               	<div class="form-row form-group">
 					                <div class="radio">
 					                  <label>
-					                    <input type="radio" name="guarda-garage" value="Sí" id="guarda-garage_0" data-descuento="6">
-					                    Sí</label>
+					                    <input type="radio" th:field="*{datosVehiculo.garage}" th:value="1" id="garage.1">
+					                    Si</label>
 					                </div>
 					                <div class="radio">
 					                  <label>
-					                    <input type="radio" name="guarda-garage" value="No" id="guarda-garage_1">
+					                    <input type="radio" th:field="*{datosVehiculo.garage}" th:value="0" id="garage.0">
 					                    No</label>
 					                </div>
 								</div>
 							</div>
 						</div>
-						
-						
 	                </section>
+
 					<!-- SECTION 2 -->
 	                <h4></h4>
 	                <section>
-	                	<div class="pregunta radio-block">
+	                	<div class="radio-block">
 		                	<h2>¿Cuántos KMS manejás al año?</h2>
 			                <div class="radio">
 			                  	<ul>
@@ -97,8 +97,7 @@
 	                <h4></h4>
 	                <section>
 		            	<div>
-		                    <!-- pregunta -->
-			              	<div class="pregunta radio-block">
+			              	<div class="radio-block">
 				                <h2>Edad</h2>
 				                <div class="radio">
 					              	<ul>
@@ -108,17 +107,17 @@
 							            </li>
 							        </ul>
 				              </div>
-				              <div class="pregunta">
+				              <div>
 				                <h2>Además de usted, ¿maneja el auto un menor de 25 años?</h2>
 				                <div class="form-row form-group">
 					                <div class="radio">
 					                  <label>
-					                    <input type="radio" name="manejan-hijos" value="Sí" id="manejan-hijos_0" data-descuento="-3">
-					                    Sí</label>
+					                    <input type="radio" th:field="*{datosVehiculo.hijos}" th:value="1" id="hijos.1">
+					                    Si</label>
 					                </div>
 					                <div class="radio">
 					                  <label>
-					                    <input type="radio" name="manejan-hijos" value="No" id="manejan-hijos_1">
+					                    <input type="radio" th:field="*{datosVehiculo.hijos}" th:value="0" id="hijos.0">
 					                    No</label>
 					                </div>
 			              		</div>
@@ -128,8 +127,6 @@
 
 	                <!-- SECTION 4 -->
 	                <h4></h4>
-
-	                
 	                <section>
 	                    <div class="form-row form-group">
 	                    	<div class="form-holder">
@@ -150,7 +147,7 @@
 		                </label>
 		             	<div class="form-group" style="margin-bottom: 24px;">
 				            <li class="radio" style="display: inline;" th:each="sexo : ${listaSexo}">
-				                <input type="radio" th:field="*{datosVehiculo.intervaloEdad}" th:value="${sexo.id}" />
+				                <input type="radio" th:field="*{cliente.sexo}" th:value="${sexo.id}" />
 				                <label th:for="${sexo.nombre}" th:text="${sexo.nombre}"></label>
 				            </li>
 					    </div>
@@ -211,10 +208,9 @@
                 <button type="submit" style="display:none;"></button>
             </form>
 		</div>
-
-		<script src="../vendor/jquery/jquery-3.3.1.min.js"></script>
 		
-		<!-- JQUERY STEP -->
+		<!-- JQUERY -->
+		<script src="../vendor/jquery/jquery-3.3.1.min.js"></script>
 		<script src="../vendor/jquery/jquery.steps.js"></script>
 
 		<script src="../js/cotizacion.js"></script>

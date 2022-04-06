@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,11 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.piasoc.commons.GeneralPath;
 import com.piasoc.model.Cotizacion;
+import com.piasoc.model.DatosVehiculo;
 import com.piasoc.model.IntervaloEdad;
 import com.piasoc.model.IntervaloKilometros;
 import com.piasoc.model.Modelo;
 import com.piasoc.model.Sexo;
+import com.piasoc.service.ClienteService;
 import com.piasoc.service.CotizacionService;
+import com.piasoc.service.DatosVehiculoService;
 import com.piasoc.service.IntervaloEdadService;
 import com.piasoc.service.IntervaloKilometrosService;
 import com.piasoc.service.ModeloService;
@@ -39,6 +44,12 @@ public class MainController {
 
 	@Autowired
 	private SexoService SexoService;
+	
+	@Autowired
+	private DatosVehiculoService datosVehiculoService;
+	
+	@Autowired
+	private ClienteService clienteService;
 
 	@RequestMapping("/seleccionarVehiculo")
 	public String seleccionarVehiculo(Model model) {
@@ -59,12 +70,14 @@ public class MainController {
 			anios.add(i);
 		}
 		model.addAttribute("anios", anios);
+		
+		model.addAttribute("datosVehiculo", new DatosVehiculo());
 
 		return "pages/seleccionarVehiculo";
 	}
 
 	@RequestMapping("/cotizacion/{id}")
-	public String cotizacion(@PathVariable("id") Long id, Model model) {
+	public String cotizacion(@PathVariable("id") Long id, DatosVehiculo datosVehiculo, Model model, HttpSession session) {
 
 		List<IntervaloKilometros> listaIntervaloKilometros = intervaloKilometrosService.getAll();
 		model.addAttribute("listaIntervaloKilometros", listaIntervaloKilometros);
@@ -75,14 +88,19 @@ public class MainController {
 		List<Sexo> listaSexo = SexoService.getAll();
 		model.addAttribute("listaSexo", listaSexo);
 
+		session.setAttribute("datosVehiculo", datosVehiculo);
 		model.addAttribute("cotizacion", new Cotizacion());
-		
+
 		return "pages/cotizacion";
 	}
 
 	@RequestMapping("/saveCotizacion")
-	public String saveCotizacion(Cotizacion cotizacion, Model model) {
-		model.addAttribute("cotizacion", new Cotizacion());
+	public String saveCotizacion(Cotizacion cotizacion, Model model, HttpSession session) {
+		DatosVehiculo datosVehiculo = (DatosVehiculo) session.getAttribute("datosVehiculo");
+		cotizacion.getDatosVehiculo().setModelo(datosVehiculo.getModelo());
+		
+		datosVehiculoService.save(cotizacion.getDatosVehiculo());
+		clienteService.save(cotizacion.getCliente());
 		cotizacionService.save(cotizacion);
 		return GeneralPath.REDIRECT;
 	}
