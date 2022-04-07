@@ -6,20 +6,20 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.piasoc.model.Cliente;
-import com.piasoc.model.Cotizacion;
-import com.piasoc.model.DatosVehiculo;
-import com.piasoc.model.IntervaloEdad;
-import com.piasoc.model.IntervaloKilometros;
-import com.piasoc.model.Modelo;
-import com.piasoc.model.Sexo;
-import com.piasoc.service.ClienteService;
-import com.piasoc.service.CotizacionService;
-import com.piasoc.service.DatosVehiculoService;
-import com.piasoc.service.IntervaloEdadService;
-import com.piasoc.service.IntervaloKilometrosService;
-import com.piasoc.service.ModeloService;
-import com.piasoc.service.SexoService;
+import com.estonianport.piasoc.model.Cliente;
+import com.estonianport.piasoc.model.Cotizacion;
+import com.estonianport.piasoc.model.DatosVehiculo;
+import com.estonianport.piasoc.model.IntervaloEdad;
+import com.estonianport.piasoc.model.IntervaloKilometros;
+import com.estonianport.piasoc.model.Modelo;
+import com.estonianport.piasoc.model.Sexo;
+import com.estonianport.piasoc.service.ClienteService;
+import com.estonianport.piasoc.service.CotizacionService;
+import com.estonianport.piasoc.service.DatosVehiculoService;
+import com.estonianport.piasoc.service.IntervaloEdadService;
+import com.estonianport.piasoc.service.IntervaloKilometrosService;
+import com.estonianport.piasoc.service.ModeloService;
+import com.estonianport.piasoc.service.SexoService;
 
 
 @SpringBootTest
