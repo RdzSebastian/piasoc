@@ -65,6 +65,19 @@ begin
         VALUES ('JUMPY',tipo_pickup_id,marca_id,'1994',NULL);
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('BERLINGO',tipo_pickup_id,marca_id,'1996',NULL);
+        VALUES ('BERLINGO',tipo_auto_id,marca_id,'1996',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('C15',tipo_auto_id,marca_id,'2000','2004');
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('C5',tipo_auto_id,marca_id,'2002',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('C6',tipo_auto_id,marca_id,'2002','2011');
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('SPACETOURER',tipo_pickup_id,marca_id,'2002','2011');
+
 
 end$$
