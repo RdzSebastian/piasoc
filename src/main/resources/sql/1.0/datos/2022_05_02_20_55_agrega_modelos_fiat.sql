@@ -64,4 +64,41 @@ begin
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
         VALUES ('STRADA',tipo_pickup_id,marca_id,'1996',NULL);
 
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('GRAND SIENA',tipo_pickup_id,marca_id,'2012','2018');
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('MULTIPLA',tipo_pickup_id,marca_id,'2002','2003');
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('LINEA',tipo_pickup_id,marca_id,'2009','2018');
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('MAREA',tipo_pickup_id,marca_id,'2000','2007');
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('MOBI',tipo_pickup_id,marca_id,'2016',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('QUBO',tipo_pickup_id,marca_id,'2012','2016');
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('TORO',tipo_pickup_id,marca_id,'2018',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('BRACHETTA',tipo_pickup_id,marca_id,'2000','2003');
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('BRAVA',tipo_pickup_id,marca_id,'2000','2003');
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('BRAVO',tipo_pickup_id,marca_id,'2000','2014');
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('DOBLO',tipo_pickup_id,marca_id,'2012',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('COUPE FIAT',tipo_pickup_id,marca_id,'2000','2001');
+
+
 end$$
