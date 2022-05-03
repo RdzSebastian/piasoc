@@ -121,4 +121,23 @@ begin
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
         VALUES ('F1000 ',tipo_camion_id,marca_id,'2010','2015');
 
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('KUGA ',tipo_camion_id,marca_id,'2010',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('MONDEO ',tipo_camion_id,marca_id,'2000',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('TRANSIT',tipo_camion_id,marca_id,'2000',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('CARGO',tipo_camion_id,marca_id,'2000',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('F-1400',tipo_camion_id,marca_id,'2000','2007');
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('F-4000',tipo_camion_id,marca_id,'2000',NULL);
+
+
 end$$
