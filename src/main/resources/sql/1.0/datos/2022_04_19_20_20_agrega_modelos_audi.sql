@@ -97,6 +97,4 @@ begin
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
         VALUES ('SQ5',tipo_auto_id,marca_id,'2017',NULL);  
 
-
-
 end$$

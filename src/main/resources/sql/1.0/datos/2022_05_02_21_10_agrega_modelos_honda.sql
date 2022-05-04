@@ -43,15 +43,4 @@ begin
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
         VALUES ('ODISSEY',tipo_auto_id,marca_id,'2000','2000');
 
-    
-    
-    
-    
-    
-    
-    
-    
-   
-
-
 end$$
