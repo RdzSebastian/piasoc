@@ -44,7 +44,7 @@ public class MainController {
 	private ModeloService modeloService;
 
 	@Autowired
-	private SexoService SexoService;
+	private SexoService sexoService;
 	
 	@Autowired
 	private DatosVehiculoService datosVehiculoService;
@@ -89,7 +89,7 @@ public class MainController {
 		List<IntervaloEdad> listaIntervaloEdad = intervaloEdadService.getAll();
 		model.addAttribute("listaIntervaloEdad", listaIntervaloEdad);
 
-		List<Sexo> listaSexo = SexoService.getAll();
+		List<Sexo> listaSexo = sexoService.getAll();
 		model.addAttribute("listaSexo", listaSexo);
 
 		session.setAttribute("datosVehiculo", datosVehiculo);
