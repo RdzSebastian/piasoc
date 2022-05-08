@@ -84,7 +84,6 @@ begin
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
         VALUES ('TORO',tipo_pickup_id,marca_id,'2018',NULL);
-
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
         VALUES ('BRACHETTA',tipo_pickup_id,marca_id,'2000','2003');
 
