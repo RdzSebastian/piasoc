@@ -1,5 +1,5 @@
 do $$ 
-declare marca_nombre varchar := 'FIAT';
+declare marca_nombre varchar := 'HONDA';
         marca_id int := 0;
         tipo_moto varchar := 'MOTO';
         tipo_auto varchar := 'AUTO';
