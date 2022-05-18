@@ -122,7 +122,25 @@ begin
         VALUES ('SUBURBAN',tipo_pickup_id,marca_id,'2010', NULL);
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('YUKON',tipo_pickup_id,marca_id,'2000', '2000');    
+        VALUES ('YUKON',tipo_pickup_id,marca_id,'2000', '2000'); 
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('15-190',tipo_camion_id,marca_id,'2000', '2001');   
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('16-220',tipo_camion_id,marca_id,'2000', '2003');  
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('6-150',tipo_camion_id,marca_id,'2000', '2001'); 
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('KODIAK',tipo_camion_id,marca_id,'2000', '2003'); 
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('NKR',tipo_camion_id,marca_id,'2000', '2001'); 
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('NPR',tipo_camion_id,marca_id,'2000', '2001');          
 
 
 end$$
