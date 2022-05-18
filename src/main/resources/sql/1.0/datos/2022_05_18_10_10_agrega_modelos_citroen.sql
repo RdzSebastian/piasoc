@@ -79,5 +79,8 @@ begin
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
         VALUES ('SPACETOURER',tipo_pickup_id,marca_id,'2002','2011');
 
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('DS7',tipo_auto_id,marca_id,'2018',NULL);
+
 
 end$$
