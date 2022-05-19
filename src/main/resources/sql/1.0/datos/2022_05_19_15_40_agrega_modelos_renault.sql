@@ -1,5 +1,5 @@
 do $$ 
-declare marca_nombre varchar := 'VOLKSWAGEN';
+declare marca_nombre varchar := 'RENAULT';
         marca_id int := 0;
         tipo_moto varchar := 'MOTO';
         tipo_auto varchar := 'AUTO';
@@ -20,86 +20,157 @@ begin
     marca_id := (SELECT id FROM MARCA WHERE nombre = marca_nombre);
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('AMAROK',tipo_auto_id,marca_id,'2010',NULL);
+        VALUES ('CAPTUR',tipo_auto_id,marca_id,'2016',NULL);
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('BORA',tipo_auto_id,marca_id,'2000','2014');
+        VALUES ('CLIO',tipo_auto_id,marca_id,'2000','2017');
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('CADDY',tipo_auto_id,marca_id,'2000','2009');
+        VALUES ('DUSTER',tipo_auto_id,marca_id,'2011',NULL);
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('ESCARABAJO',tipo_auto_id,marca_id,'2003','2004');   
+        VALUES ('OROCH',tipo_pickup_id,marca_id,'2016',NULL);
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('FOX',tipo_auto_id,marca_id,'2004',NULL);
+        VALUES ('EXPRESS',tipo_auto_id,marca_id,'2000','2003');
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('GOL',tipo_auto_id,marca_id,'2000',NULL);  
+        VALUES ('FLUENCE',tipo_auto_id,marca_id,'2010','2018');
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('GOL COUNTRY',tipo_auto_id,marca_id,'2000','2011'); 
+        VALUES ('GRAND SCENIC',tipo_auto_id,marca_id,'2007','2009');
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('GOLF',tipo_auto_id,marca_id,'2000',NULL); 
+        VALUES ('KANGOO',tipo_auto_id,marca_id,'2000',NULL);
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('MULTIVAN',tipo_auto_id,marca_id,'2007','2010');
+        VALUES ('KOLEOS',tipo_auto_id,marca_id,'2009',NULL);
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('NEW BEETLE',tipo_auto_id,marca_id,'2000','2012');
+        VALUES ('KWID',tipo_auto_id,marca_id,'2016',NULL);
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('PASSAT',tipo_auto_id,marca_id,'2000',NULL);
+        VALUES ('LAGUNA',tipo_auto_id,marca_id,'2000','2008');
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('POLO',tipo_auto_id,marca_id,'2000',NULL);
+        VALUES ('LATITUDE',tipo_auto_id,marca_id,'2011','2013');
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('QUANTUM',tipo_auto_id,marca_id,'2000','2000');
+        VALUES ('LOGAN',tipo_auto_id,marca_id,'2007',NULL);
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('SANTANA',tipo_auto_id,marca_id,'2003','2007'); 
+        VALUES ('MASTER',tipo_auto_id,marca_id,'2000',NULL);
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('SAVEIRO',tipo_auto_id,marca_id,'2000',NULL); 
+        VALUES ('MEGANE',tipo_auto_id,marca_id,'2000','2017');
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('SCIROCCO',tipo_auto_id,marca_id,'2012',NULL); 
+        VALUES ('R19',tipo_auto_id,marca_id,'2000','2001');
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('SHARAN',tipo_auto_id,marca_id,'2001','2016'); 
+        VALUES ('SANDERO',tipo_auto_id,marca_id,'2008',NULL);
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('SURAN',tipo_auto_id,marca_id,'2006',NULL);
+        VALUES ('STEPWAY',tipo_auto_id,marca_id,'2009',NULL);
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('T-CROSS',tipo_auto_id,marca_id,'2019',NULL);
+        VALUES ('SCENIC',tipo_auto_id,marca_id,'2000','2012');
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('THE BEETLE',tipo_auto_id,marca_id,'2014',NULL);
+        VALUES ('SYMBOL',tipo_auto_id,marca_id,'2008','2014');
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('TIGUAN',tipo_auto_id,marca_id,'2008',NULL);
+        VALUES ('TRAFIC',tipo_auto_id,marca_id,'2000','2003');
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('TOUAREG',tipo_auto_id,marca_id,'2004',NULL);
+        VALUES ('TWINGO',tipo_auto_id,marca_id,'2000','2003');
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('TRANSPORTER',tipo_auto_id,marca_id,'2000','2010');
+        VALUES ('C320',tipo_camion_id,marca_id,'2014','2016');
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('UP',tipo_auto_id,marca_id,'2014',NULL);
+        VALUES ('D16',tipo_camion_id,marca_id,'2014','2016');
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('VENTO',tipo_auto_id,marca_id,'2005',NULL);
+        VALUES ('KERAX',tipo_camion_id,marca_id,'2007','2016');
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('VIRTUS',tipo_auto_id,marca_id,'2018',NULL);
+        VALUES ('MAGNUM',tipo_camion_id,marca_id,'2000','2005');
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('VOYAGE',tipo_auto_id,marca_id,'2008',NULL);
+        VALUES ('MANAGER',tipo_camion_id,marca_id,'2000','2000');
 
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('MAXTER HORMIGONERO',tipo_camion_id,marca_id,'2000','2001');
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('MIDLINER',tipo_camion_id,marca_id,'2000','2003');
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('MIDLUM',tipo_camion_id,marca_id,'2004','2014');
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('PREMIUM',tipo_camion_id,marca_id,'2000','2018');
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('PHANTOM',tipo_camion_id,marca_id,'2007','2010');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 end$$
