@@ -109,30 +109,6 @@ begin
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
         VALUES ('TRAVELLER',tipo_auto_id,marca_id,'2018','2018');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
+        
 
 end$$
