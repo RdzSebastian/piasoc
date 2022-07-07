@@ -44,7 +44,7 @@ begin
         VALUES ('C2',tipo_auto_id,marca_id,'2003','2009');
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
-        VALUES ('DS3',tipo_auto_id,marca_id,'2009','2019');
+        VALUES ('DS3',tipo_auto_id,marca_id,'2009',NULL);
 
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
         VALUES ('DS4',tipo_auto_id,marca_id,'2011',NULL);
