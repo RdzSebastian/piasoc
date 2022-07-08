@@ -18,7 +18,6 @@ import com.estonianport.piasoc.model.Cotizacion;
 import com.estonianport.piasoc.model.DatosVehiculo;
 import com.estonianport.piasoc.model.IntervaloEdad;
 import com.estonianport.piasoc.model.IntervaloKilometros;
-import com.estonianport.piasoc.model.Modelo;
 import com.estonianport.piasoc.model.Sexo;
 import com.estonianport.piasoc.service.ClienteService;
 import com.estonianport.piasoc.service.CotizacionService;
@@ -27,9 +26,16 @@ import com.estonianport.piasoc.service.IntervaloEdadService;
 import com.estonianport.piasoc.service.IntervaloKilometrosService;
 import com.estonianport.piasoc.service.ModeloService;
 import com.estonianport.piasoc.service.SexoService;
+import com.estonianport.piasoc.service.TipoVehiculoService;
 
 @Controller
 public class MainController {
+
+	@Autowired
+	private ModeloService modeloService;
+
+	@Autowired
+	private TipoVehiculoService tipoVehiculoService;
 
 	@Autowired
 	private CotizacionService cotizacionService;
@@ -41,30 +47,21 @@ public class MainController {
 	private IntervaloEdadService intervaloEdadService;
 
 	@Autowired
-	private ModeloService modeloService;
+	private SexoService sexoService;
 
 	@Autowired
-	private SexoService sexoService;
-	
-	@Autowired
 	private DatosVehiculoService datosVehiculoService;
-	
+
 	@Autowired
 	private ClienteService clienteService;
-	
+
 	@Autowired
 	private EmailService emailService;
 
 	@RequestMapping("/seleccionarVehiculo")
 	public String seleccionarVehiculo(Model model) {
 
-		List<Modelo> modelos = modeloService.getAll();
-		for (Modelo modelo : modelos) {
-			if(modelo.getAnio_hasta() == null) {
-				modelo.setAnio_hasta(2021);
-			}
-		}
-		model.addAttribute("listaModelo", modelos);
+		model.addAttribute("listaTipoVehiculo", tipoVehiculoService.getAll());
 
 		int firstYear = 1990;
 		int currentYear = LocalDate.now().getYear();
@@ -74,7 +71,7 @@ public class MainController {
 			anios.add(i);
 		}
 		model.addAttribute("anios", anios);
-		
+
 		model.addAttribute("datosVehiculo", new DatosVehiculo());
 
 		return "pages/seleccionarVehiculo";
@@ -106,9 +103,9 @@ public class MainController {
 		datosVehiculoService.save(cotizacion.getDatosVehiculo());
 		clienteService.save(cotizacion.getCliente());
 		cotizacionService.save(cotizacion);
-		
+
 		modeloService.get(datosVehiculo.getModelo().getId());
-		
+
 		emailService.enviarMailComprabanteReserva(cotizacion);
 		return GeneralPath.REDIRECT;
 	}
