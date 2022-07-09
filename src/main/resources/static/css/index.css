@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-
 *{
     margin: 0;
     box-sizing: border-box;
@@ -19,31 +18,12 @@ ul{
     padding: 0;
 }
 
-header{
-    width: 100%;
-    height: 16vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
-}
-
 .logo-header{
     width: 25%;
 }
 
-#img-logo{
+.img-logo{
     width: 100%;
-}
-
-nav{
-    width: 75%;
-}
-
-nav, .menu-container{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;  
 }
 
 .menu-container{
@@ -112,12 +92,6 @@ a{
     text-decoration: none;
     color: var(--colorTexto);
     letter-spacing: 1px;
-}
-
-.fa-whatsapp{
-    color: limegreen;
-    font-size: 45px;
-    margin-left: 40px;
 }
 
 /**************** SECTION SLIDER *****************/
@@ -196,6 +170,29 @@ a{
     bottom: 50px;
 }
 
+
+
+#boton-cotizar{
+	font-size: 36px;
+    margin: 30px;
+    color: var(--colorPrincipal);
+}
+
+.btn-cotizar{
+    width: 200px;
+    padding: 15px 25px;
+    font-size: 26px;
+    background-color: var(--colorPrincipal);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-cotizar:hover{
+    background-color: var(--colorSecundario);
+}
+
 /**************** SECTION QUIENES SOMOS *****************/
 
 .quienes-somos{
@@ -238,11 +235,6 @@ a{
     color: var(--colorTexto);
     text-align: justify;
     line-height: 1.8;
-}
-
-.contenedor-btn-seguros{
-    display: flex;
-    justify-content: center;
 }
 
 .btn-seguros{
