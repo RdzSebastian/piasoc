@@ -20,11 +20,10 @@
 
 	<header>
 		<nav class="navbar navbar-expand-lg navbar navbar-light">
-			
 			<a class="logo-header navbar-brand">
 				<img class="img-logo" src="./imgs/prueba3.png"/>
 			</a>
-			
+
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"> </span>
 			</button>
@@ -43,113 +42,119 @@
 	</header>
 
 	<section id="slider" class="slider">
-
-		<div class="slider-container" id="slider-container">
-			<div class="slider-section">
-				<img src="./imgs/img-1.png" alt="" class="slider-img">
-				<!-- parrafo absoluto al div contenedor: slider-secion -->
+		<div class="container">
+			<div class="slider-container" id="slider-container">
+				<div class="slider-section">
+					<img src="./imgs/img-1.png" alt="" class="slider-img">
+					<!-- parrafo absoluto al div contenedor: slider-secion -->
+				</div>
+				<div class="slider-section">
+					<img src="./imgs/img-2.png" alt="" class="slider-img">
+				</div>
+				<div class="slider-section">
+					<img src="./imgs/img-3.png" alt="" class="slider-img">
+				</div>
 			</div>
-			<div class="slider-section">
-				<img src="./imgs/img-2.png" alt="" class="slider-img">
+
+			<div class="slider-btn slider-btn-right" id="slider-btn-right">&#62</div>
+
+			<div class="slider-btn slider-btn-left" id="slider-btn-left">&#60</div>
+
+			<div class="container-slider-logo">
+				<img src="./imgs/logo_blanco-2.png" alt="" class="slider-logo">
 			</div>
-			<div class="slider-section">
-				<img src="./imgs/img-3.png" alt="" class="slider-img">
-			</div>
-		</div>
-
-		<div class="slider-btn slider-btn-right" id="slider-btn-right">&#62</div>
-
-		<div class="slider-btn slider-btn-left" id="slider-btn-left">&#60</div>
-
-		<div class="container-slider-logo">
-			<img src="./imgs/logo_blanco-2.png" alt="" class="slider-logo">
 		</div>
 	</section>
 
 	<section id="boton-cotizar">
-		<form class="form-inline py-4">
-			<div class="form-group text-center">
-				<label for="cotizar">Cotiza tu vehiculo ahora</label>
-				<a th:href="@{/seleccionarVehiculo}" class="btn-cotizar mx-5">Cotizar</a>
+		<div class="container">
+			<div class="form-inline py-4">
+				<div class="form-group text-center">
+					<label for="cotizar">Cotiza tu vehiculo ahora</label>
+					<a th:href="@{/seleccionarVehiculo}" class="btn-cotizar mx-5">Cotizar</a>
+				</div>
 			</div>
-		</form>
+		</div>
 	</section>
 
 	<div class="border-top my-3"></div>
 
 	<section id="quienes-somos" class="quienes-somos">
-		<h2>Quiénes somos</h2>
+		<div class="container  text-center">
+			<h1 class="p-5">Quiénes somos</h1>
 
-		<div class="info-quienes-somos">
-			<div class="img-quienes-somos">
-				<img src="./imgs/prueba.png" alt="">
+			<div class="row">
+				<div class="col-6 img-quienes-somos">
+					<img src="./imgs/prueba.png" alt="">
+				</div>
+
+				<div class="col-9 descripcion-quienes-somos">
+					<p>Somos una empresa de productores de seguros que se inició de forma independiente en el año 1980.
+						Desde entonces, nos enfocamos en ofrecer el mejor servicio a nuestros clientes.
+					</p>
+				</div>
 			</div>
 
-			<div class="descripcion-quienes-somos">
-				<p>Somos una empresa de productores de seguros que se inició de forma independiente en el año 1980.
-					Desde entonces, nos enfocamos en ofrecer el mejor servicio a nuestros clientes.
-				</p>
+			<div class="contenedor-btn-seguros p-4">
+				<a th:href="@{/seguros}" class="btn-seguros">Seguros</a>
 			</div>
-		</div>
-
-		<div class="contenedor-btn-seguros">
-			<a th:href="@{/seguros}" class="btn-seguros">Seguros</a>
 		</div>
 	</section>
 
 	<section id="seguros" class="seguros"></section>
 
 	<section id="companias" class="companias">
-		<h2>Compañías</h2>
-
-		<div class="companias-container">
-			<div class="companias-item">
-				<img src="./imgs/logos-companias/allianz-logo.png" alt="">
-			</div>
-			<div class="companias-item">
-				<img src="./imgs/logos-companias/berkley-logo.png" alt="">
-			</div>
-			<div class="companias-item">
-				<img src="./imgs/logos-companias/experta-art-logo.png" alt="">
-			</div>
-			<div class="companias-item">
-				<img src="./imgs/logos-companias/fianzas-y-creditos-logo.png" alt="">
-			</div>
-			<div class="companias-item">
-				<img src="./imgs/logos-companias/galeno-art-logo.png" alt="">
-			</div>
-			<div class="companias-item">
-				<img src="./imgs/logos-companias/integrity-logo.png" alt="">
-			</div>
-			<div class="companias-item">
-				<img src="./imgs/logos-companias/prevencion-logo.png" alt="">
-			</div>
-			<div class="companias-item">
-				<img src="./imgs/logos-companias/provincia-art-logo.png" alt="">
-			</div>
-			<div class="companias-item">
-				<img src="./imgs/logos-companias/pseguros-logo.png" alt="">
-			</div>
-			<div class="companias-item">
-				<img src="./imgs/logos-companias/sancor-seguros-logo.png" alt="">
-			</div>
-			<div class="companias-item">
-				<img src="./imgs/logos-companias/seguros-rivadavia-logo.png" alt="">
-			</div>
-			<div class="companias-item">
-				<img src="./imgs/logos-companias/tpc-seguros-logo.png" alt="">
-			</div>
-			<div class="companias-item">
-				<img src="./imgs/logos-companias/hdi-logo.png" alt="">
-			</div>
-			<div class="companias-item">
-				<img src="./imgs/logos-companias/atm-logo.png" alt="">
-			</div>
-			<div class="companias-item">
-				<img src="./imgs/logos-companias/smg-seguros-logo.png" alt="">
-			</div>
-			<div class="companias-item">
-				<img src="./imgs/logos-companias/zurich-logo.png" alt="">
+		<div class="container">
+			<h2>Compañías</h2>
+			<div class="companias-container">
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/allianz-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/berkley-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/experta-art-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/fianzas-y-creditos-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/galeno-art-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/integrity-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/prevencion-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/provincia-art-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/pseguros-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/sancor-seguros-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/seguros-rivadavia-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/tpc-seguros-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/hdi-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/atm-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/smg-seguros-logo.png" alt="">
+				</div>
+				<div class="companias-item">
+					<img src="./imgs/logos-companias/zurich-logo.png" alt="">
+				</div>
 			</div>
 		</div>
 	</section>

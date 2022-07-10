@@ -195,24 +195,6 @@ a{
 
 /**************** SECTION QUIENES SOMOS *****************/
 
-.quienes-somos{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    text-align: center;
-    height: 100vh;
-    padding: 20px 100px;
-    letter-spacing: 1px;
-    line-height: 1.4;
-}
-
-.quienes-somos h2{
-    font-size: 36px;
-    font-weight: bold;
-    margin: 30px;
-    color: var(--colorPrincipal);
-}
-
 .info-quienes-somos{
     display: flex;
     justify-content: space-between;
@@ -224,10 +206,6 @@ a{
 
 .img-quienes-somos img{
     width: 100%;    
-}
-
-.descripcion-quienes-somos{
-    width: 65%;
 }
 
 .descripcion-quienes-somos p{
