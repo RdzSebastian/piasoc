@@ -48,40 +48,36 @@
 			<h2>Seleccionar Vehiculo</h2>
 			<br>
 			<form th:action="@{/cotizacion/0}" method="post" th:object="${datosVehiculo}" id="signup-form" class="signup-form">
-				<table class="table">
-					<thead>
-						<div class="container">
-							<div class="row">
-								<div class="col">
-									<select class="form-select" id="tipoVehiculo">
-										<option selected hidden>Tipo de vehiculo</option>
-										<option th:each="tipoVehiculo : ${listaTipoVehiculo}" th:class="${tipoVehiculo.nombre}" th:text="${tipoVehiculo.nombre}" th:value="${tipoVehiculo.id}"/>
-									</select>
-								</div>
-								
-								<div class="col">
-									<select class="form-select" id="marca">
-										<option selected hidden>Marca</option>
-									</select>
-								</div>
-		
-								<div class="col">
-									<select class="form-select" id="modelo">
-										<option selected hidden th:value="0">Modelo</option>
-									</select>
-								</div>
-	
-								<div class="col">
-									<select class="form-select">
-										<option selected hidden>Año</option>
-										<option th:each="anio : ${anios}" th:value="${anio}" th:text="${anio}"/>
-									</select>
-								</div>
-	
-							</div>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3 col-sm-12">
+							<select class="form-select" id="tipoVehiculo">
+								<option selected hidden>Tipo de vehiculo</option>
+								<option th:each="tipoVehiculo : ${listaTipoVehiculo}" th:class="${tipoVehiculo.nombre}" th:text="${tipoVehiculo.nombre}" th:value="${tipoVehiculo.id}"/>
+							</select>
 						</div>
-					</thead>
-				</table>
+						
+						<div class="col-md-3 col-sm-12">
+							<select class="form-select" id="marca">
+								<option selected hidden>Marca</option>
+							</select>
+						</div>
+
+						<div class="col-md-3 col-sm-12">
+							<select class="form-select" id="modelo">
+								<option selected hidden th:value="0">Modelo</option>
+							</select>
+						</div>
+
+						<div class="col-md-3 col-sm-12">
+							<select class="form-select">
+								<option selected hidden>Año</option>
+								<option th:each="anio : ${anios}" th:value="${anio}" th:text="${anio}"/>
+							</select>
+						</div>
+
+					</div>
+				</div>
 				
 				<div class="container mt-3">
 					<div class="gap-2 d-flex justify-content-end">
@@ -93,6 +89,7 @@
 						</div>
 					</div>
 				</div>
+
 	    	</form>
 		</div>
 	</section>
