@@ -43,4 +43,46 @@ begin
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
         VALUES ('ODISSEY',tipo_auto_id,marca_id,'2000','2000');
 
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('AFRICA TWIN',tipo_moto_id,marca_id,'2017',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('C BIZ',tipo_moto_id,marca_id,'2019',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('CB',tipo_moto_id,marca_id,'2017',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('CBR',tipo_moto_id,marca_id,'2011',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('CBX',tipo_moto_id,marca_id,'2011',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('CG',tipo_moto_id,marca_id,'2015',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('CRF',tipo_moto_id,marca_id,'2011',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('ELITE',tipo_moto_id,marca_id,'2011',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('NC',tipo_moto_id,marca_id,'2015',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('PCX',tipo_moto_id,marca_id,'2017',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('TRX',tipo_moto_id,marca_id,'2011',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('WAVE',tipo_moto_id,marca_id,'2011',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('XR',tipo_moto_id,marca_id,'2011',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('XRE',tipo_moto_id,marca_id,'2013',NULL);
+
 end$$
