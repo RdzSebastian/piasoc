@@ -50,20 +50,20 @@
 			<form th:action="@{/cotizacion/0}" method="post" th:object="${datosVehiculo}" id="signup-form" class="signup-form">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-3 col-sm-12">
+						<div class="col-md-3 col-sm-12 mb-4">
 							<select class="form-select" id="tipoVehiculo">
 								<option selected hidden>Tipo de vehiculo</option>
 								<option th:each="tipoVehiculo : ${listaTipoVehiculo}" th:class="${tipoVehiculo.nombre}" th:text="${tipoVehiculo.nombre}" th:value="${tipoVehiculo.id}"/>
 							</select>
 						</div>
 						
-						<div class="col-md-3 col-sm-12">
+						<div class="col-md-3 col-sm-12 mb-4">
 							<select class="form-select" id="marca">
 								<option selected hidden>Marca</option>
 							</select>
 						</div>
 
-						<div class="col-md-3 col-sm-12">
+						<div class="col-md-3 col-sm-12 mb-4">
 							<select class="form-select" id="modelo">
 								<option selected hidden th:value="0">Modelo</option>
 							</select>
