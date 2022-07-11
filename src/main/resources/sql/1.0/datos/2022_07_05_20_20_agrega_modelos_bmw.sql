@@ -178,5 +178,30 @@ begin
     INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
         VALUES ('Z 8',tipo_auto_id,marca_id,'2000','2005');
 
-    
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('C 650',tipo_moto_id,marca_id,'2013',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('F 750',tipo_moto_id,marca_id,'2018',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('F 850',tipo_moto_id,marca_id,'2018',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('G 310',tipo_moto_id,marca_id,'2017',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('HP4 1000',tipo_moto_id,marca_id,'2015',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('K 1600',tipo_moto_id,marca_id,'2013',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('R 1200',tipo_moto_id,marca_id,'2011',NULL);
+
+    INSERT INTO MODELO (nombre, tipo_vehiculo_id, marca_id, anio_desde, anio_hasta)
+        VALUES ('S 1000',tipo_moto_id,marca_id,'2011',NULL);
+
+
+   
 end$$
