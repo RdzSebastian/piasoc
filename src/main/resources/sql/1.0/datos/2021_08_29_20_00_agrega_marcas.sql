@@ -162,6 +162,9 @@ begin
         VALUES ('KIA');
 
     INSERT INTO MARCA (nombre)
+        VALUES ('KTM');
+
+    INSERT INTO MARCA (nombre)
         VALUES ('KYC');
 
     INSERT INTO MARCA (nombre)
