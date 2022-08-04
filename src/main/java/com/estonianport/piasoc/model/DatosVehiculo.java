@@ -8,7 +8,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
 public class DatosVehiculo {
 
 	@Id
@@ -38,69 +43,5 @@ public class DatosVehiculo {
 	@ManyToOne
 	@JoinColumn(name = "intervalo_kilometros")
 	private IntervaloKilometros intervaloKilometros;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Modelo getModelo() {
-		return modelo;
-	}
-
-	public void setModelo(Modelo modelo) {
-		this.modelo = modelo;
-	}
-
-	public boolean isParticular() {
-		return particular;
-	}
-
-	public void setParticular(boolean particular) {
-		this.particular = particular;
-	}
-
-	public boolean isAlarma() {
-		return alarma;
-	}
-
-	public void setAlarma(boolean alarma) {
-		this.alarma = alarma;
-	}
-
-	public boolean isGarage() {
-		return garage;
-	}
-
-	public void setGarage(boolean garage) {
-		this.garage = garage;
-	}
-
-	public boolean isHijos() {
-		return hijos;
-	}
-
-	public void setHijos(boolean hijos) {
-		this.hijos = hijos;
-	}
-
-	public IntervaloEdad getIntervaloEdad() {
-		return intervaloEdad;
-	}
-
-	public void setIntervaloEdad(IntervaloEdad intervaloEdad) {
-		this.intervaloEdad = intervaloEdad;
-	}
-
-	public IntervaloKilometros getIntervaloKilometros() {
-		return intervaloKilometros;
-	}
-
-	public void setIntervaloKilometros(IntervaloKilometros intervaloKilometros) {
-		this.intervaloKilometros = intervaloKilometros;
-	}
 
 }

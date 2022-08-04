@@ -7,7 +7,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
 public class Cotizacion {
 
 	@Id
@@ -21,21 +26,5 @@ public class Cotizacion {
 	@ManyToOne
 	@JoinColumn(name = "datosVehiculo_id")
 	private DatosVehiculo datosVehiculo;
-
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-
-	public DatosVehiculo getDatosVehiculo() {
-		return datosVehiculo;
-	}
-
-	public void setDatosVehiculo(DatosVehiculo datosVehiculo) {
-		this.datosVehiculo = datosVehiculo;
-	}
 
 }

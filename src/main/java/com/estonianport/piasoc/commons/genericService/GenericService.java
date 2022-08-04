@@ -1,4 +1,4 @@
-package com.estonianport.piasoc.commons;
+package com.estonianport.piasoc.commons.genericService;
 
 import java.io.Serializable;
 import java.util.List;

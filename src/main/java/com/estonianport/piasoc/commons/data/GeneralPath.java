@@ -1,4 +1,4 @@
-package com.estonianport.piasoc.commons;
+package com.estonianport.piasoc.commons.data;
 
 public class GeneralPath {
 

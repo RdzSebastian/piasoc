@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
-import com.estonianport.piasoc.commons.GenericServiceImpl;
+import com.estonianport.piasoc.commons.genericService.GenericServiceImpl;
 import com.estonianport.piasoc.dao.SexoDao;
 import com.estonianport.piasoc.model.Sexo;
 import com.estonianport.piasoc.service.SexoService;

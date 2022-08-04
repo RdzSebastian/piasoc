@@ -11,9 +11,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import com.estonianport.piasoc.commons.GeneralPath;
-import com.estonianport.piasoc.email.EmailService;
+import com.estonianport.piasoc.commons.data.GeneralPath;
+import com.estonianport.piasoc.commons.dateUtil.DateUtil;
+import com.estonianport.piasoc.commons.emailService.EmailService;
 import com.estonianport.piasoc.model.Cotizacion;
 import com.estonianport.piasoc.model.DatosVehiculo;
 import com.estonianport.piasoc.model.IntervaloEdad;
@@ -96,17 +98,21 @@ public class MainController {
 	}
 
 	@RequestMapping("/saveCotizacion")
-	public String saveCotizacion(Cotizacion cotizacion, Model model, HttpSession session) {
+	public String saveCotizacion(Cotizacion cotizacion, @RequestParam(value="fechaNacimiento") String fecha, Model model, HttpSession session) {
 		DatosVehiculo datosVehiculo = (DatosVehiculo) session.getAttribute("datosVehiculo");
 		cotizacion.getDatosVehiculo().setModelo(modeloService.get(datosVehiculo.getModelo().getId()));
-
+		cotizacion.getCliente().setFechaNacimiento(DateUtil.createFechaInvertida(fecha));
+		
 		datosVehiculoService.save(cotizacion.getDatosVehiculo());
 		clienteService.save(cotizacion.getCliente());
 		cotizacionService.save(cotizacion);
 
 		modeloService.get(datosVehiculo.getModelo().getId());
 
-		emailService.enviarMailComprabanteReserva(cotizacion);
+		emailService.enviarMailComprabanteCliente(cotizacion);
+
+		emailService.enviarMailComprabanteAseguradora(cotizacion);
+
 		return GeneralPath.REDIRECT;
 	}
 

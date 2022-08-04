@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.estonianport.piasoc.commons.GeneralPath;
+import com.estonianport.piasoc.commons.data.GeneralPath;
 import com.estonianport.piasoc.model.Marca;
 import com.estonianport.piasoc.service.MarcaService;
 

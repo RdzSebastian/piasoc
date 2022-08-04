@@ -6,7 +6,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @MappedSuperclass
+@Getter
+@Setter
 public class Intervalo {
 
 	@Id
@@ -15,21 +20,5 @@ public class Intervalo {
 
 	@Column
 	private String intervalo;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getIntervalo() {
-		return intervalo;
-	}
-
-	public void setIntervalo(String intervalo) {
-		this.intervalo = intervalo;
-	}
 
 }
