@@ -11,6 +11,12 @@ begin
     INSERT INTO MARCA (nombre)
         VALUES ('ALFA ROMEO');
 
+   	INSERT INTO MARCA (nombre)
+        VALUES ('APPIA');
+
+    INSERT INTO MARCA (nombre)
+        VALUES ('APRILIA');
+
     INSERT INTO MARCA (nombre)
         VALUES ('ARO');
 
@@ -22,6 +28,9 @@ begin
 
     INSERT INTO MARCA (nombre)
         VALUES ('BAIC');
+
+    INSERT INTO MARCA (nombre)
+        VALUES ('BAJAJ'); 
 
     INSERT INTO MARCA (nombre)
         VALUES ('BELAVTOMAZ');
@@ -135,7 +144,7 @@ begin
         VALUES ('IZH');
 
     INSERT INTO MARCA (nombre)
-        VALUES ('JAC MOTORS');
+        VALUES ('JAC');
 
     INSERT INTO MARCA (nombre)
         VALUES ('JAGUAR');
@@ -162,7 +171,7 @@ begin
         VALUES ('KIA');
 
     INSERT INTO MARCA (nombre)
-        VALUES ('KTM');
+    	VALUES ('KTM');
 
     INSERT INTO MARCA (nombre)
         VALUES ('KYC');
