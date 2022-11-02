@@ -8,7 +8,7 @@ $(document).ready(function() {
 		
 		$.ajax({
 			type: 'GET',
-			url: "http://localhost:8080/api/buscarMarca",
+			url: "http://paulaiglesiasyasociados.com.ar/api/buscarMarca",
 			data : data,
 			contentType: "application/json",
 			success : function(listaMarca) {
@@ -35,7 +35,7 @@ $(document).ready(function() {
 		
 		$.ajax({
 			type: 'GET',
-			url: "http://localhost:8080/api/buscarModelo",
+			url: "http://paulaiglesiasyasociados.com.ar/api/buscarModelo",
 			data : data,
 			contentType: "application/json",
 			success : function(listaModelo) {
